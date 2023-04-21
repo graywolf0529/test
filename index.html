@@ -8,33 +8,80 @@
     <title>練習歷程</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/color.css">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            $("header").load("header.html");
+        });
+    </script>
 </head>
 
 <body>
+    <header></header>
     <div class="container">
         <div class="row">
+            <div class="col-8 offset-2 text-center">
+                <div class="demo">
+                    <div class="fs-2">現在時間</div>
+                    <div class="now_date fs-4"></div>
+                    <div class="now_sec fs-4"></div>
+                </div>
+            </div>
+            <div class="col-8 offset-2 text-center">
+            </div>
             <div class="col-8 offset-2">
                 <div class="demo">
-                    <div class="fs-1">
+                    <div class="fs-1 text-center">
                         練習歷程
                     </div>
                     <div class="list-group">
-                        <a href="./20230203-2.html" target="_blank" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="./20230203-2.html" target="_blank"
+                            class="list-group-item list-group-item-action active" aria-current="true">
                             CSS初學
                         </a>
-                        <a href="./20230303-3.html" target="_blank" class="list-group-item list-group-item-action">欄與列的練習</a>
-                        <a href="./20230303-4.html" target="_blank" class="list-group-item list-group-item-action">BootStrap 切版練習</a>
-                        <a href="./20230310-3.html" target="_blank" class="list-group-item list-group-item-action">第八章 spacing排版練習-1</a>
-                        <a href="./20230310-4.html" target="_blank" class="list-group-item list-group-item-action">第八章 spacing排版練習-2</a>
-                        <a href="./20230317-2.html" target="_blank" class="list-group-item list-group-item-action disabled">工作經歷(施工中)</a>
-                        <a href="./20230414-2.html" target="_blank" class="list-group-item list-group-item-action">問卷</a>
+                        <a href="./20230303-3.html" target="_blank"
+                            class="list-group-item list-group-item-action">欄與列的練習</a>
+                        <a href="./20230303-4.html" target="_blank"
+                            class="list-group-item list-group-item-action">BootStrap 切版練習</a>
+                        <a href="./20230310-3.html" target="_blank" class="list-group-item list-group-item-action">第八章
+                            spacing排版練習-1</a>
+                        <a href="./20230310-4.html" target="_blank" class="list-group-item list-group-item-action">第八章
+                            spacing排版練習-2</a>
+                        <a href="./20230317-2.html" target="_blank"
+                            class="list-group-item list-group-item-action disabled">工作經歷(施工中)</a>
+                        <a href="./20230414-2.html" target="_blank"
+                            class="list-group-item list-group-item-action">問卷</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        var today = new Date();
+
+        // console.log(today.toUTCString());
+        // console.log(today.toTimeString());
+        // console.log(today.toLocaleDateString());
+        // console.log(today.toLocaleTimeString());
+
+        var time_date = document.querySelector(".now_date");
+        // console.log(time_date.textContent);
+        time_date.textContent = today.toLocaleDateString();
+
+        var time_sec = document.querySelector(".now_sec");
+        time_sec.textContent = today.toLocaleTimeString();
+
+        var time_flash = setInterval(new_time, 1000);
+        function new_time() {
+            var new_time_sec = new Date();
+            var time_sec_new = document.querySelector(".now_sec");
+            var time_sec_new_hover = document.querySelector(".now_sec:hover");
+            time_sec_new.textContent = new_time_sec.toLocaleTimeString();
+        }
+
+    </script>
 </body>
 
 </html>

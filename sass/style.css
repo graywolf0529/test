@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: lightgoldenrodyellow;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: black;
+  color: lightgoldenrodyellow;
+  box-shadow: 3px 3px 5px 1px #757474;
+}
+header div.logo {
+  display: flex;
+  align-items: center;
+  flex: 5 1 400px;
+  margin-left: 2rem;
+}
+header div.logo img {
+  height: 6vw;
+}
+header nav {
+  flex: 2 1 400px;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.35rem;
+}
+header nav ul li a:hover {
+  color: lightgreen;
+}
+
+main section.backImage {
+  min-height: 90vh;
+  width: 100%;
+  background-image: url(../images/pexels-photo-416676.jpeg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+}
+main section.backImage div.filter {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  min-height: 90vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+main section.backImage div.filter h3 {
+  font-size: 3.5rem;
+  color: white;
+  margin: 2rem 0rem;
+}
+main section.backImage div.filter button.start {
+  background-color: #36f0e5;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+main section.backImage div.filter div.login_box {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 40%;
+  border-radius: 10px;
+  z-index: 1;
+}
+main section.backImage div.filter div.login_box label {
+  color: white;
+  font-size: 1.1rem;
+}
+main section.backImage div.filter div.login_box button.login_bt {
+  background-color: #36f0e5;
+  color: white;
+}
+main section.backImage div.filter div.contact_box {
+  z-index: 1;
+}
+main section.backImage div.filter div.contact_box div.now {
+  color: white;
+  font-size: 1.2rem;
+}
+main section.backImage div.filter div.contact_box div.now div.now_text {
+  border: 1px solid #36f0e5;
+  border-radius: 15px;
+  color: #36f0e5;
+  padding: 2px;
+}
+main section.backImage div.filter div.contact_box div.now div.now_date {
+  border: 1px solid #36f0e5;
+  border-radius: 15px;
+  color: #36f0e5;
+}
+main section.backImage div.filter div.contact_box div.now div.now_sec {
+  border: 1px solid #36f0e5;
+  border-radius: 15px;
+  color: #36f0e5;
+}
+main section.backImage div.filter div.contact_box div.now div.message_title {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-size: 2rem;
+  border-radius: 15px 15px 0 0;
+}
+main section.backImage div.filter div.contact_box div.now div.message_board {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+main section.backImage div.filter div.contact_box div.now div.message_bt_box {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 15px 15px;
+}
+main section.backImage div.filter div.contact_box div.now div.message_bt_box button.message_bt {
+  background-color: #36f0e5;
+  color: white;
+}
+main section.backImage div.about_box {
+  height: auto;
+  padding: 1rem;
+}
+main section.backImage div.about_box div.about_text {
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  padding: 0.8rem;
+  max-height: 400px;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: auto;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+section.second {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+section.second h2 {
+  font-size: 2rem;
+  margin: 2rem 0rem;
+}
+section.second section.cards {
+  display: flex;
+  width: 80%;
+  min-height: 80vh;
+  flex-wrap: wrap;
+}
+section.second section.cards div.card {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  flex: 1 1 300px;
+}
+section.second section.cards div.card div.img_container {
+  overflow: hidden;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+section.second section.cards div.card div.img_container img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+section.second section.cards div.card div.img_container img:hover {
+  transform: scale(1.5);
+}
+section.second section.cards div.card h4 {
+  font-size: 2rem;
+}
+section.second section.cards div.card p {
+  font-size: 1.25rem;
+}
+section.second section.cards div.card a {
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  background-color: #09777d;
+  color: white;
+  font-size: 1.25rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 40vh;
+  justify-content: space-around;
+  background-color: rgb(207, 207, 207);
+}
+footer div.logo {
+  display: flex;
+  align-items: center;
+}
+footer div.logo img {
+  width: 6vw;
+  height: 6vw;
+}
+footer nav {
+  width: 30%;
+}
+footer nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  width: 100%;
+  justify-content: space-around;
+}
+footer nav ul li {
+  flex-basis: 100px;
+}
+footer nav ul li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.35rem;
+}
+footer section.links a {
+  margin: 0rem 1rem;
+}
+footer section.links a img {
+  width: 5vw;
+  height: 5vw;
+}
+
+@media screen and (max-width: 550px) {
+  header div.logo {
+    margin-left: 0.5rem;
+  }
+  header div.logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  main section.backImage div.filter div.login_box {
+    width: 85%;
+  }
+  main section.second section.cards div.card img {
+    width: 40vw;
+    height: 40vw;
+  }
+  footer div.logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+  footer section.links {
+    margin-top: 1rem;
+  }
+  footer section.links a img {
+    width: 10vw;
+    height: 10vw;
+  }
+}/*# sourceMappingURL=style.css.map */
