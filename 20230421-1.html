@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: var(--ColorType0301);
+            display: inline-block;
+        }
+
+        .box_l {
+            width: 200px;
+            height: 100px;
+            background-color: var(--ColorType0301);
+            display: inline-block;
+        }
+
+        .bgi_normal {
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="sticky-top">
+        <div class="demo text-center">
+            <a class="btn btn-lg btn-danger" href="#bottom_tag">到底層</a>
+        </div>
+    </header>
+    <div class="demo">
+        <div class="fs-1">1. Border Class</div>
+        <div class="box border border-5 border-danger bgi_normal" style="background-image: url(./images/FM001.webp);">
+        </div>
+        <div class="box border border-4 border-danger border-top-0 bgi_normal"
+            style="background-image: url(./images/FM006.webp);"></div>
+        <div class="box border border-3 border-start-0 border-bottom-0 border-dark bgi_normal"
+            style="background-image: url(./images/FM003.webp);"></div>
+        <div class="box border border-3 border-success bgi_normal" style="background-image: url(./images/FM004.webp);">
+        </div>
+        <div class="box border border-5 border-info bgi_normal" style="background-image: url(./images/FM005.webp);">
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">1. Border Rounded</div>
+        <div class="box border border-5 border-danger rounded bgi_normal"
+            style="background-image: url(./images/PrettyDerby-優秀素質.png);"></div>
+        <div class="box border border-5 border-danger rounded-circle bgi_normal"
+            style="background-image: url(./images/PrettyDerby-小栗帽.png);"></div>
+        <div class="box border border-5 border-danger rounded-bottom bgi_normal"
+            style="background-image: url(./images/PrettyDerby-北部玄駒.png);"></div>
+        <div class="box border border-5 border-danger rounded-end bgi_normal"
+            style="background-image: url(./images/PrettyDerby-曼哈頓咖啡.png);"></div>
+        <div class="box border border-5 border-danger rounded-start bgi_normal"
+            style="background-image: url(./images/PrettyDerby-成田白仁.png);"></div>
+        <div class="box_l border border-5 border-danger rounded-pill bgi_normal"
+            style="background-image: url(./images/PrettyDerby-伏特加.png);"></div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">2. 文字練習 Text Class</div>
+        <p class="text-primary">文字練習<a class="link-primary" href="#">這是連結</a></p>
+        <p class="text-danger">文字練習<a class="link-danger" href="#">這是連結</a></p>
+        <p class="text-secondary">文字練習<a class="link-secondary" href="#">這是連結</a></p>
+        <p class="text-light">文字練習<a class="link-light" href="#">這是連結</a></p>
+        <p class="text-success">文字練習<a class="link-success" href="#">這是連結</a></p>
+        <p class="text-dark">文字練習<a class="link-dark" href="#">這是連結</a></p>
+        <p class="text-white text-bg-danger">文字背景色</p>
+        <p class="text-white text-bg-dark">文字背景色</p>
+        <p class="text-white text-bg-info">文字背景色</p>
+    </div>
+    <div class="demo">
+        <div class="fs-1">3. Display</div>
+        <div class="p-2 text-bg-danger mb-2">no d-inline</div>
+        <div class="p-2 text-bg-danger mb-2 d-inline">d-inline1</div>
+        <div class="p-2 text-bg-danger mb-2 d-inline">d-inline2</div>
+        <div class="p-2 text-bg-danger mb-2 d-inline">d-inline3</div>
+        <hr>
+        <span class="p-2 text-bg-danger">no d-block</span>
+        <span class="p-2 text-bg-danger mt-2 d-block">d-block1</span>
+        <span class="p-2 text-bg-danger mt-2 d-block">d-block2</span>
+        <hr>
+        <span class="p-2 text-bg-danger d-none d-xl-block mt-2">手機隱藏 PC xl 顯示</span>
+        <span class="p-2 text-bg-danger d-none d-lg-block mt-2">手機隱藏 PC lg 顯示</span>
+        <span class="p-2 text-bg-danger d-none d-md-block mt-2">手機隱藏 PC md 顯示</span>
+        <span class="p-2 text-bg-danger d-none d-sm-block mt-2">手機隱藏 PC sm 顯示</span>
+    </div>
+    <div class="demo">
+        <div class="fs-1">4.文字選取</div>
+        <p class="user-select-all">文字全選</p>
+        <p class="user-select-auto">文字(預設值)</p>
+        <p class="user-select-none">文字禁止選取</p>
+        <div class="test p-3 border border-danger border-3 user-select-all">
+            <div class="fs-3">測試框</div>
+            可選文字
+            <p class="user-select-none">禁選文字</p>
+            可選文字
+            <hr>
+            可選文字
+            <p class="user-select-auto">文字(預設值)</p>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">5.Overflow</div>
+        <div class="box overflow-visible">
+            疾病快速美女等人推廣不是很，我們發貼，兩年能不能上傳討論回答填寫，有限責任公司將來課程昨日看法你的，有很多測試升級健康很久果然設立消除法律和你大多數本文女生支持，身影報名興奮內置防治課程斗內美元進攻全市需要大師一位楠雅，在那裡排名沒有產品五年前往第一關鍵字不對全家營養朋友這樣英文，偉大信譽，適當促。
+        </div>
+        <div class="box overflow-auto">
+            疾病快速美女等人推廣不是很，我們發貼，兩年能不能上傳討論回答填寫，有限責任公司將來課程昨日看法你的，有很多測試升級健康很久果然設立消除法律和你大多數本文女生支持，身影報名興奮內置防治課程斗內美元進攻全市需要大師一位楠雅，在那裡排名沒有產品五年前往第一關鍵字不對全家營養朋友這樣英文，偉大信譽，適當促。
+        </div>
+        <div class="box overflow-hidden">
+            疾病快速美女等人推廣不是很，我們發貼，兩年能不能上傳討論回答填寫，有限責任公司將來課程昨日看法你的，有很多測試升級健康很久果然設立消除法律和你大多數本文女生支持，身影報名興奮內置防治課程斗內美元進攻全市需要大師一位楠雅，在那裡排名沒有產品五年前往第一關鍵字不對全家營養朋友這樣英文，偉大信譽，適當促。
+        </div>
+        <div class="box overflow-scroll">
+            疾病快速美女等人推廣不是很，我們發貼，兩年能不能上傳討論回答填寫，有限責任公司將來課程昨日看法你的，有很多測試升級健康很久果然設立消除法律和你大多數本文女生支持，身影報名興奮內置防治課程斗內美元進攻全市需要大師一位楠雅，在那裡排名沒有產品五年前往第一關鍵字不對全家營養朋友這樣英文，偉大信譽，適當促。
+        </div>
+        <hr>
+        <div class="fs-3">應用範例</div>
+        <div class="bg-danger w-100">
+            <ul class="list-unstyled d-flex justify-content-between flex-nowrap overflow-auto p-3">
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單1</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單2</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單3</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單4</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單5</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單6</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單7</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單8</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單9</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單10</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單11</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單12</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單13</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單14</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單15</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單16</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單17</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單18</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單19</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單20</li>
+                <li class="p-3 text-nowrap d-block bg-warning me-2">選單21</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="demo">
+        <div class="fs-1">7.Shadow</div>
+        <div class="box bgi_normal shadow-sm" style="background-image: url(./images/game01.jpg);"></div>
+        <div class="box bgi_normal shadow" style="background-image: url(./images/game02.webp);"></div>
+        <div class="box bgi_normal shadow-lg" style="background-image: url(./images/game03.avif);"></div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">8.Sizing(W)</div>
+        <div class="p-2 mb-2 text-light w-25 bgi_normal" style="background-image: url(./images/wolf001.avif);">w-25
+        </div>
+        <div class="p-2 mb-2 text-light w-50 bgi_normal" style="background-image: url(./images/wolf002.avif);">w-50
+        </div>
+        <div class="p-2 mb-2 text-light w-75 bgi_normal" style="background-image: url(./images/wolf003.avif);">w-75
+        </div>
+        <div class="p-2 mb-2 text-light w-100 bgi_normal" style="background-image: url(./images/wolf004.avif);">w-100
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">9.Sizing(H)</div>
+        <div class="t_box p-2" style="height: 500px;">
+            <div class="p-3 text-light bgi_normal d-inline-block h-25"
+                style="background-image: url(./images/wolf101.avif);">h-25</div>
+            <div class="p-3 text-light bgi_normal d-inline-block h-50"
+                style="background-image: url(./images/wolf102.avif);">h-50</div>
+            <div class="p-3 text-light bgi_normal d-inline-block h-75"
+                style="background-image: url(./images/wolf103.avif);">h-75</div>
+            <div class="p-3 text-light bgi_normal d-inline-block h-100"
+                style="background-image: url(./images/wolf104.avif);">h-100</div>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">10.vh,vw(註解處理)</div>
+        <!-- <div class="bg-info py-2 mb-2 vh-100">vh-100</div> -->
+        <!-- <div class="bg-info py-2 mb-2 vw-100">vw-100</div> -->
+    </div>
+    <div class="demo">
+        <div class="fs-1">11.text</div>
+        <p class="text-start">ctlorem10</p>
+        <p class="text-center">ctlorem10</p>
+        <p class="text-end">ctlorem10</p>
+        <div class="fs-3">結合中斷點</div>
+        <p class="text-md-center text-lg-start">ctlorem10</p>
+        <p class="text-md-end text-lg-start">ctlorem10</p>
+    </div>
+    <div class="demo">
+        <div class="fs-1">12.visible</div>
+        <div class="box bgi_normal" style="background-image: url(./images/PrettyDerby-米浴.png);"></div>
+        <div class="box bgi_normal invisible" style="background-image: url(./images/PrettyDerby-駿川手綱.png);"></div>
+        <div class="box bgi_normal visible" style="background-image: url(./images/PrettyDerby-樫本理子.png);"></div>
+    </div>
+
+    <footer class="sticky-bottom">
+        <div class="demo text-center">
+            <a class="btn btn-lg btn-success" href="#">到頂層</a>
+        </div>
+    </footer>
+    <div id="bottom_tag"></div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+</body>
+
+</html>
