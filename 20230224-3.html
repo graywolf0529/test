@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20230224課堂練習</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        table thead tr th {
+            color: #036EB8;
+            border-bottom: 1px #45c1ff solid;
+            text-align: center;
+        }
+
+        .dp_n {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 800px) {
+            table.table {
+                width: 95%;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+
+            table thead {
+                display: none;
+            }
+
+            table tr {
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            table td.t {
+                display: block;
+                overflow: hidden;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            table td span {
+                display: block;
+                float: left;
+                width: 80%;
+            }
+
+            table td::before {
+                display: block;
+                float: left;
+                content: attr(data-th);
+                background-color: #9b6ed3;
+                color: white;
+                text-align: left;
+                width: 20%;
+                height: 50px;
+                border: 1px gray solid;
+                padding: 6px;
+            }
+            .dp_n {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>類別</th>
+                <th>標題</th>
+                <th>發布單位</th>
+                <th>發布日期</th>
+                <th>點閱人氣</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="t" data-th="類別"><span>最新消息</span></td>
+                <td class="t" data-th="標題"><span>112年職前訓練冷凍空調裝修班第1期甄試正備取名單公告。</span></td>
+                <td class="t" data-th="發布單位"><span>資訊服務股</span></td>
+                <td class="t" data-th="發布日期"><span>112-02-24</span></td>
+                <td class="t dp_n" data-th="點閱人氣"><span>25</span></td>
+            </tr>
+            <tr>
+                <td class="t" data-th="類別"><span>最新消息</span></td>
+                <td class="t" data-th="標題"><span>112年度自辦在職進修訓練5011 影像編輯與平面設計</span></td>
+                <td class="t" data-th="發布單位"><span>資訊服務股</span></td>
+                <td class="t" data-th="發布日期"><span>112-02-23</span></td>
+                <td class="t dp_n" data-th="點閱人氣"><span>354</span></td>
+            </tr>
+            <tr>
+                <td class="t" data-th="類別"><span>機關徵才</span></td>
+                <td class="t" data-th="標題"><span>公告本分署土木工程職系技佐職缺錄取人員</span></td>
+                <td class="t" data-th="發布單位"><span>人事室</span></td>
+                <td class="t" data-th="發布日期"><span>112-02-23</span></td>
+                <td class="t dp_n" data-th="點閱人氣"><span>78</span></td>
+            </tr>
+            <tr>
+                <td class="t" data-th="類別"><span>最新消息</span></td>
+                <td class="t" data-th="標題"><span>公告112年度自辦職前移地訓練計畫「經典烘焙暨行銷培訓A</span></td>
+                <td class="t" data-th="發布單位"><span>勞動學苑</span></td>
+                <td class="t" data-th="發布日期"><span>112-02-23</span></td>
+                <td class="t dp_n" data-th="點閱人氣"><span>69</span></td>
+            </tr>
+            <tr>
+                <td class="t" data-th="類別"><span>機關徵才</span></td>
+                <td class="t" data-th="標題"><span>公告本分署「聘用研究員」職缺1名錄取人員</span></td>
+                <td class="t" data-th="發布單位"><span>人事室</span></td>
+                <td class="t" data-th="發布日期"><span>112-02-22</span></td>
+                <td class="t dp_n" data-th="點閱人氣"><span>38</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

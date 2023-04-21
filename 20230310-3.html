@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章 spacing排版練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        .box {
+            background-color: var(--ColorType0801);
+            color: var(--ColorType0803);
+            border: 3px double var(--ColorType0804);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-xl-2 col-md-4 p-2 box d-flex flex-column mb-2">
+                <img src="images/FM001.webp" alt="" class="img-fluid mt-3">
+                <div class="fs-4">
+                    <b>ジョーカーの簡易評価</b>
+                </div>
+                <nav>
+                    <li>自身の属性を切り替えて、優勢な相手に攻撃すると更に火力が上がる</li>
+                    <li>再行動スキルで長距離移動や回復が可能</li>
+                    <li>攻撃スキルを使うと元の属性に戻ってしまうため、オートは不向き</li>
+                </nav>
+                <div class="fs-4">
+                    <b>ジョーカーの特性</b>
+                </div>
+                <p>
+                    Lv6：会心率が20%アップ。優勢な属性の敵を攻撃時、会心率が追加で15%アップ、さらに攻撃後、自身が「術式攻撃+」を獲得、3ターン有効。
+                    「術式攻撃+」：術式攻撃が20%アップ。
+                </p>
+                <a href="#" class="btn btn-danger d-block mt-auto">詳細資料</a>
+            </div>
+            <div class="col-sm-6 col-xl-2 col-md-4 p-2 box d-flex flex-column mb-2">
+                <img src="images/FM002.webp" alt="" class="img-fluid mt-3">
+                <div class="fs-4">
+                    <b>ブラッドレイの簡易評価</b>
+                </div>
+                <nav>
+                    <li>攻撃する度に物理防御無視の効果がアップ</li>
+                    <li>潜在解放で得られる与ダメージに応じた回復が優秀</li>
+                    <li>「憤怒」のスタックを溜めるのに時間がかかる</li>
+                </nav>
+                <div class="fs-4">
+                    <b>ブラッドレイの特性</b>
+                </div>
+                <p>
+                    Lv6：攻撃時、物理攻撃と会心率が15％アップ。攻撃後、「憤怒」を1回獲得。
+                    「憤怒」：敵の物理防御を5％無視する。10回まで重ね掛け可。解除不可
+                </p>
+                <a href="#" class="btn btn-danger d-block mt-auto">詳細資料</a>
+            </div>
+            <div class="col-sm-6 col-xl-2 col-md-4 p-2 box d-flex flex-column mb-2">
+                <img src="images/FM003.webp" alt="" class="img-fluid mt-3">
+                <div class="fs-4">
+                    <b>白エドワードの簡易評価</b>
+                </div>
+                <nav>
+                    <li>複数の火力バフ＆再行動で護衛無視+高火力発揮</li>
+                    <li>スキル・奥義で最大HP依存ダメージを与えられる</li>
+                    <li>移動4+射程2、ドレイン持ちで扱いやすい</li>
+                    <li>真理への道を踏む立ち回りが必要(オートでも踏んでくれる)</li>
+                </nav>
+                <div class="fs-4">
+                    <b>白エドワードの特性</b>
+                </div>
+                <p>
+                    Lv6：術式攻撃が20%アップ。行動時、敵をすり抜けて移動できる。スキル・奥義発動後、追加でターゲットの最大HPの10%で固定ダメージを与える。最大自身の術式攻撃の200%まで。ターゲットの最大HPが自身の最大HPの200%を上回る場合、与える固定ダメージがターゲットの最大HPの15%にアップ。最大自身の術式攻撃の200%まで。
+                    ラウンド開始時、または再行動時、敵が自身の周囲4マスにいる場合、最も近い敵1体の付近に「真理への道」が発生する。1ラウンド有効。
+                    自身が「真理への道」の位置で行動終了すると、自身に「真理」を付与、1ターン有効。さらに2マス再移動して攻撃できる。自身が「真理」を持つ場合、「真理への道」の位置で行動終了しても、効果が発生しない。
+                    「真理への道」で「真理」が付与された場合、2ターン経過後、「真理への道」が再発生するようになる。
+                    「真理」：術式ダメージが15%アップ。攻撃時、護衛を無視する。解除不可。
+                </p>
+                <a href="#" class="btn btn-danger d-block mt-auto">詳細資料</a>
+            </div>
+            <div class="col-sm-6 col-xl-2 col-md-4 p-2 box d-flex flex-column mb-2">
+                <img src="images/FM004.webp" alt="" class="img-fluid mt-3">
+                <div class="fs-4">
+                    <b>水着ホークアイの簡易評価</b>
+                </div>
+                <nav>
+                    <li>相手との距離が広がるほど火力が上がり、奥義との相性も良い</li>
+                    <li>設置スキルによって相手のターンでも攻撃可能</li>
+                    <li>設置スキル発動中は連携や反撃ができなくなる</li>
+                </nav>
+                <div class="fs-4">
+                    <b>水着ホークアイの特性</b>
+                </div>
+                <p>
+                    Lv6：攻撃時、相手との距離1マスにつき、与ダメージが15％アップ。最大で45％アップ。
+                    このターンで攻撃を発動しない場合、行動終了時、自身が「エイム+」を獲得、1ターン有効。
+                    「エイム+」：通常攻撃、スキルと奥義の射程が1マスアップ。解除不可。
+                </p>
+                <a href="#" class="btn btn-danger d-block mt-auto">詳細資料</a>
+            </div>
+            <div class="col-sm-6 col-xl-2 col-md-4 p-2 box d-flex flex-column mb-2">
+                <img src="images/FM005.webp" alt="" class="img-fluid mt-3">
+                <div class="fs-4">
+                    <b>正月ランファンの簡易評価</b>
+                </div>
+                <nav>
+                    <li>単体スキル＆花火の固定ダメージで超火力発揮</li>
+                    <li>不屈や軽減、反撃無効スキルなどで耐久力もある</li>
+                    <li>遠隔&移動4で扱いやすい</li>
+                    <li>単体攻撃しか持たない</li>
+                </nav>
+                <div class="fs-4">
+                    <b>正月ランファンの特性</b>
+                </div>
+                <p>
+                    Lv6：会心率が20％アップ。攻撃後、ターゲットに「花火」を付与、1ターン有効。自身が致命的なダメージを受けてもHPが1残り、最大HPの50％を回復、自身に「強撃2」を付与、1ターン有効。さらに自身に「献身」を付与、1ターン有効。1回の戦闘に1回のみ発動できる。
+                    「強撃2」：物理攻撃が20％アップ。
+                    「花火」：攻撃を受けると、自身とその周囲1マスの味方全てに発動者の物理攻撃の30％の固定ダメージを与える。
+                    「献身」：行動終了時、戦闘不能になる。解除不可。
+                </p>
+                <a href="#" class="btn btn-danger d-block mt-auto">詳細資料</a>
+            </div>
+            <div class="col-sm-6 col-xl-2 col-md-4 p-2 box d-flex flex-column mb-2">
+                <img src="images/FM006.webp" alt="" class="img-fluid mt-3">
+                <div class="fs-4">
+                    <b>水着ウィンリィの簡易評価</b>
+                </div>
+                <nav>
+                    <li>スキルや奥義使用後、周囲の味方全員を回復</li>
+                    <li>行動終了後に水爆弾を設置でき、相手の行動を制限</li>
+                    <li>奥義で奥義ポイントを付与できるため回転率が高い</li>
+                </nav>
+                <div class="fs-4">
+                    <b>水着ウィンリィの特性</b>
+                </div>
+                <p>
+                    Lv6：スキルまたは奥義使用後、自身の周囲3マス以内の味方ユニットのHPを自身の術式攻撃の85％で回復。
+                    行動終了後、自身の周囲2マス以内の空いている1マスを選び、「水爆弾」を置く。敵が「水爆弾」上に移動するか、設置から2ラウンド経過後に「水爆弾」を起爆し、周囲1マス以内の敵に105％の術式範囲ダメージを与え、さらに「鈍足2」を付与、1ターン有効。「水爆弾」設置時、自身が奥義ポイントを1ポイント獲得。
+                    ※水爆弾上に、スキルでユニットを配置した場合、水爆弾は発動しない。
+                    「鈍足2」：移動力が2マスダウン。
+                </p>
+                <a href="#" class="btn btn-danger d-block mt-auto">詳細資料</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

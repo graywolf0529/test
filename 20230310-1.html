@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第七章 Flex</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        .box1{
+            height: 60px;
+            color: white;
+            font-size: 48px;
+            text-align: center;
+            line-height: 60px;
+            border: 3px solid var(--ColorType0702);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-info">
+    <div class="container">
+        <div class="fs-3">1.Flex row</div>
+        <div class="row flex-row">
+            <div class="col-md-3">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-success">3</div>
+            </div>
+        </div>
+        <div class="fs-3">2.Flex row reverse</div>
+        <div class="row flex-row-reverse">
+            <div class="col-md-3">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-success">3</div>
+            </div>
+        </div>
+        <div class="fs-3">3.Flex column</div>
+        <div class="row flex-column gy-1">
+            <div class="col-md-3">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-success">3</div>
+            </div>
+        </div>
+        <div class="fs-3">4.Flex column reverse</div>
+        <div class="row flex-column-reverse gy-3">
+            <div class="col-md-3">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box1 bg-success">3</div>
+            </div>
+        </div>
+        <div class="fs-3">5.Justify content start</div>
+        <div class="row justify-content-start">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">6.Justify content center</div>
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">7.Justify content end</div>
+        <div class="row justify-content-end">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">8.Justify content around</div>
+        <div class="row justify-content-around">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">9.Justify content between</div>
+        <div class="row justify-content-between">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">10.Align items start</div>
+        <div class="row flex-column align-items-start">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">11.Align items center</div>
+        <div class="row flex-column align-items-center">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">12.Align items end</div>
+        <div class="row flex-column align-items-end">
+            <div class="col-md-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2">
+                <div class="box1 bg-danger">4</div>
+            </div>
+        </div>
+        <div class="fs-3">13.Align self start, center, end</div>
+        <div class="row flex-column">
+            <div class="col-md-2 align-self-start">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-md-2 align-self-center">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-md-2 align-self-center">
+                <div class="box1 bg-danger">4</div>
+            </div>
+            <div class="col-md-2 align-self-start">
+                <div class="box1 bg-primary">5</div>
+            </div>
+        </div>
+        <div class="fs-3">13.Order</div>
+        <div class="row">
+            <div class="col-sm-2 order-sm-1 order-md-2 order-lg-3 order-xl-4 order-xxl-5">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-sm-2 order-sm-2 order-md-3 order-lg-4 order-xl-5 order-xxl-1">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-sm-2 order-sm-3 order-md-4 order-lg-5 order-xl-1 order-xxl-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-sm-2 order-sm-4 order-md-5 order-lg-1 order-xl-2 order-xxl-3">
+                <div class="box1 bg-danger">4</div>
+            </div>
+            <div class="col-sm-2 order-sm-5 order-md-1 order-lg-2 order-xl-3 order-xxl-4">
+                <div class="box1 bg-primary">5</div>
+            </div>
+        </div>
+        <div class="fs-3">13.ms-auto, me-auto</div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-sm-2 ms-auto">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-sm-2 me-auto">
+                <div class="box1 bg-danger">4</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="box1 bg-primary">5</div>
+            </div>
+        </div>
+        <div class="fs-3">13.mt-auto, mb-auto</div>
+        <div class="row flex-column" style="height: 100vh;">
+            <div class="col-sm-2">
+                <div class="box1 bg-black">1</div>
+            </div>
+            <div class="col-sm-2 mt-auto">
+                <div class="box1 bg-warning">2</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="box1 bg-success">3</div>
+            </div>
+            <div class="col-sm-2 mb-auto">
+                <div class="box1 bg-danger">4</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="box1 bg-primary">5</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

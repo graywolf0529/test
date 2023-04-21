@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS切版練習</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        :root {
+            /* 甜膩瑪瑙 */
+            --ColorType0101: #FFD954;
+            --ColorType0102: #E4B660;
+            --ColorType0103: #F2AB39;
+            --ColorType0104: #69491A;
+            /* 憂鬱植物藍 */
+            --ColorType0201: #D1DDDB;
+            --ColorType0202: #85B8CB;
+            --ColorType0203: #1D6A96;
+            --ColorType0204: #283B42;
+            /* 瑰麗紅 */
+            --ColorType0301: #FFC2C3;
+            --ColorType0302: #FE7773;
+            --ColorType0303: #E81E25;
+            --ColorType0304: #0E0301;
+            /* 冰凍石 */
+            --ColorType0401: #A6C2CE;
+            --ColorType0402: #9C8F96;
+            --ColorType0403: #EBC57C;
+            --ColorType0404: #6B799E;
+            /* 北極光 */
+            --ColorType0501: #91D4C2;
+            --ColorType0502: #45BB89;
+            --ColorType0503: #3D82AB;
+            --ColorType0504: #003853;
+            /* 迷幻霧景 */
+            --ColorType0601: #FDDCEF;
+            --ColorType0602: #D5C5E9;
+            --ColorType0603: #3A5A69;
+            --ColorType0604: #030923;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* background: linear-gradient(to bottom, var(--ColorType0101), var(--ColorType0102), var(--ColorType0103), var(--ColorType0104)); */
+            background-color: var(--ColorType0101);
+        }
+
+        .wrapper {
+            width: 1024px;
+            height: 300px;
+            background-color: var(--ColorType0102);
+            margin: 0px auto;
+        }
+
+        .banner {
+            background-color: var(--ColorType0102);
+        }
+
+        .content {
+            width: 1024px;
+            /* height: 200px; */
+            background-color: var(--ColorType0102);
+            border: 5px solid var(--ColorType0104);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .content_in {
+            margin: 10px 0px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            background-color: var(--ColorType0104);
+        }
+
+        nav ul {
+            display: inline-block;
+            margin: 0px;
+        }
+
+        nav ul li {
+            float: left;
+            list-style-type: none;
+            margin: 5px;
+            background-color: var(--ColorType0103);
+            border: 2px solid var(--ColorType0104);
+            border-radius: 5px;
+            padding: 5px 5px;
+            box-shadow: 2px 2px var(--ColorType0101);
+        }
+
+        nav ul li:hover {
+            background-color: var(--ColorType0202);
+            color: var(--ColorType0203);
+            border: 2px double var(--ColorType0204);
+            border-radius: 5px;
+            box-shadow: 2px 2px var(--ColorType0201);
+            font-style: oblique;
+        }
+
+        nav ul li a {
+            color: var(--ColorType0104);
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: 1.5em;
+            font-family: "標楷體";
+        }
+
+        h1 {
+            color: var(--ColorType0402);
+            text-align: center;
+            background-color: var(--ColorType0401);
+            width: 160px;
+            margin: 0px auto;
+            font-family: "標楷體";
+            border: 2px solid var(--ColorType0402);
+            border-radius: 10px;
+            box-shadow: 2px 2px var(--ColorType0404);
+            font-style: oblique;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        p{
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .content_in a {
+            display: block;
+            width: 120px;
+            color: var(--ColorType0104);
+            background: linear-gradient(to bottom,var(--ColorType0101), var(--ColorType0102), var(--ColorType0103));
+            /* background-color: var(--ColorType0103); */
+            border: 2px solid var(--ColorType0104);
+            border-radius: 5px;
+            margin: 20px auto;
+            text-decoration: none;
+            box-sizing: border-box;
+            padding: 2px;
+            font-family: "標楷體";
+            font-size: 25px;
+        }
+
+        .content_in a:hover {
+            color: var(--ColorType0403);
+            background: linear-gradient(to bottom,var(--ColorType0401), var(--ColorType0402), var(--ColorType0403));
+            /* background-color: var(--ColorType0403); */
+            border-color: var(--ColorType0404);
+        }
+
+        footer {
+            width: 1024px;
+            /* height: 200px; */
+            background-color: var(--ColorType0303);
+            border: 5px solid var(--ColorType0302);
+            border-radius: 20px;
+            box-sizing: border-box;
+            color: var(--ColorType0304);
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bolder;
+            font-family: "微軟正黑體";
+            padding: 2px;
+        }
+        footer:hover {
+            background-color: var(--ColorType0304);
+            color: var(--ColorType0303);
+        }
+        @media screen and (max-width: 1024px) {
+            .wrapper{
+                width: 100%;
+            }
+            .banner{
+                width: 100%;
+            }
+            .content{
+                width: 100%;
+            }
+            footer{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <img src="https://fakeimg.pl/1024x200/200" width="100%">
+        </div>
+        <div class="content">
+            <nav>
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">合作店家</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <div class="content_in">
+                <h1>歡迎光臨</h1>
+                <p>我來低價許多身上特別是只有美好，新鮮補充新增規律聯想對付僅僅當你外貿金融上帝按鈕力量，空中生產阿摩斯計算機城市掌握，工程師幻想促銷做法你說實用原則經濟發展施工都不高手，小心明星動物家裡想法不然關西生氣，你好彷彿，轎車承認一級分享我想排行榜一下身上主題，出現在當天幾個語言傳輸眼光會不會努力心中抓住廣場，更好一天可以用，辦公光碟博士回家導致適用於，共享版回答觀點站長角度尋求將其體會，公開的說一會兒地面眾人三年訓練對面永遠既然他不首頁，又有記得消失配合有可能一些提示語文選項線上好多，日本本站死亡醫生往往，簡體破壞出席兩種有效正確，圖書館大部分上帝大多本文，屏東傳統保持一人傳真醫療植物職位經典出發平靜值得不願，特別是上一頁，存款第一章相應那樣，我在優秀當前模型常常，製作新手功夫長大我是清晰含有法律本次，演出有效號碼外國不好明白依法幹什麼版主夫妻停止，數字出版足夠我的兩個走勢歡迎您隱藏版登陸投資採訪客戶，作者對面後悔照顧大陸男性方案，信號求助競爭國際校長困難安排請在，之類標籤逐漸她的改革有一定女朋友交通警察，事實一切一股長期好多技術攝影商家應當網址懷疑身材效率，休息權限搭配什麼事，目光由於閲讀者插入，重要只要長期二十大師相互學校投資小遊戲一臉證券指南標題下一頁，夢想好處某種事實說過旅遊顧問將來檢索討論一直歐美你就登記，用途本月你好不對詳細內容特色我的效率任意，均為對待都有最低學習海外觀察一項直接，三年一系列障礙可能，恐怖自主原因傳統對我模型出席說道，起點這麼貨幣去了接着是一種，評論重新登錄裝置，增加地址版權，答案經銷商不能下載廣告男孩一半現代化行為我家解決，走了黑色仍然寶貝隨意精品程式造型所以快捷興趣他們的即可，因而臺灣民眾，小姐女孩子我愛業務詳細智慧部門現場，有關部門新臺幣，補充分公司資源一名專門今天日前基地危機有一些動力體制，權益差不多算是獲取上面性能，針對主任指數寫出來強調開。</p>
+                <p>各國婚姻平台就要簡單編號目的優化，及時渠道目的，嚴重威望市委都沒本公司工人德國一定會普通微笑，才能環境值得障礙，生氣中間很容易舉辦不得不，苗栗通知減肥太麻里請在影音進行私人，創作好好製造導致頻道韓國顧客設施把握硬體領域，各個劇情一位各種信心穩定我把除了範圍，第二天刷新這時遊客是啊更新時間收費職務，包括尚未體會類似位於大廈傳輸提示訊息工具，一口氣一條開始對你手中不肯，改善故障，真實配件，演唱會畫面。</p>
+                <a href="#TOP">了解更多</a>
+            </div>
+        </div>
+        <footer>
+            版權所有 2023
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欄與列的練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        .contaner{
+            background: linear-gradient(to bottom,var(--ColorType0501),var(--ColorType0502),var(--ColorType0503));
+        }
+        .box {
+            height: 600px;
+            border: 2px solid var(--ColorType0404);
+            background-color: var(--ColorType0402);
+            margin: 10px 15px;
+            box-sizing: border-box;
+            box-shadow: 10px 10px 15px var(--ColorType0401);
+        }
+
+        .box:hover{
+            background-color: var(--ColorType0403);
+        }
+
+        .img_box {
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Games</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">介紹</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            遊戲
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Switch</a></li>
+                            <li><a class="dropdown-item" href="#">PS5</a></li>
+                            <li>
+                            <li><a class="dropdown-item" href="#">PC</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">其他</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">搜尋</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="contaner">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+                <div class="box">
+                    <div class="img_box" style="background-image: url(images/game01.jpg);background-position: center
+                     center;background-size: cover;">
+                    </div>
+                    <div class="text text-center">
+                        <div class="fs-3">臥龍</div>
+                        <hr>
+                        <div class="fs-6">本作為「仁王」系列開發團隊Team NINJA傾情打造的暗黑三國誅死遊戲。</div>
+                        <button class="btn btn-danger">詳細資料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+                <div class="box">
+                    <div class="img_box" style="background-image: url(images/game02.webp);background-position: center
+                     center;background-size: cover;">
+                    </div>
+                    <div class="text text-center">
+                        <div class="fs-3">霍格華茲的傳承</div>
+                        <hr>
+                        <div class="fs-6">《霍格華茲的傳承》是一款基於《哈利·波特》系列書籍設定的沉浸式開放世界動作角色扮演遊戲。</div>
+                        <button class="btn btn-danger">詳細資料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+                <div class="box">
+                    <div class="img_box" style="background-image: url(images/game03.avif);background-position: center
+                     center;background-size: cover;">
+                    </div>
+                    <div class="text text-center">
+                        <div class="fs-3">APEX</div>
+                        <hr>
+                        <div class="fs-6">在《Apex 英雄》中和你的角色一起爭霸，這是一款免費遊玩*的英雄射擊遊戲。</div>
+                        <button class="btn btn-danger">詳細資料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+                <div class="box">
+                    <div class="img_box" style="background-image: url(images/game04.webp);background-position: center
+                     center;background-size: cover;">
+                    </div>
+                    <div class="text text-center">
+                        <div class="fs-3">人中之龍 維新！ 極</div>
+                        <hr>
+                        <div class="fs-6">以1860年代的日本「京都」為舞台，穿梭時代的英雄・坂本龍馬的另一個傳說即將開始！</div>
+                        <button class="btn btn-danger">詳細資料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+                <div class="box">
+                    <div class="img_box" style="background-image: url(images/game05.jpg);background-position: center
+                     center;background-size: cover;">
+                    </div>
+                    <div class="text text-center">
+                        <div class="fs-3">地平線 山之呼喚</div>
+                        <hr>
+                        <div class="fs-6">透過 VR 踏入沉浸式的全新冒險，揭開 Horizon 世界的暗藏危險。</div>
+                        <button class="btn btn-danger">詳細資料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+                <div class="box">
+                    <div class="img_box" style="background-image: url(images/game06.jpg);background-position: center
+                     center;background-size: cover;">
+                    </div>
+                    <div class="text text-center">
+                        <div class="fs-3">WILD HEARTS</div>
+                        <hr>
+                        <div class="fs-6">為你帶來狩獵類型遊戲的全新感受，當中的古科技將提供你與野性巨獸一搏的力量。</div>
+                        <button class="btn btn-danger">詳細資料</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

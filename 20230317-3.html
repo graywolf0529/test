@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第11章</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        .box1 {
+            background-color: var(--ColorType0701);
+            border: 2px solid var(--ColorType0703);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .time_date {
+            height: 60px;
+            font-weight: bolder;
+            color: var(--ColorType0101);
+            border: var(--ColorType0103) 3px solid;
+            border-radius: 15px;
+        }
+
+        .time_sec {
+            height: 60px;
+            color: var(--ColorType0702);
+            border: var(--ColorType0703) 3px solid;
+            border-radius: 15px;
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-4 mt-3 offset-md-2 justify-content-center align-content-center">
+                <div class="fs-1 text-center time_date"></div>
+            </div>
+            <div class="col-md-4 mt-3 justify-content-center align-content-center">
+                <div class="fs-3 text-center time_sec"></div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-8 offset-md-2">
+                <div class="box1">
+                    <div class="fs-2">文字輸入</div>
+                    <div class="mt-3">
+                        <label for="accont">帳號：</label>
+                        <input class="form-control" id="accont" name="accont" type="text">
+                    </div>
+                    <div class="mt-3">
+                        <label for="nickname">暱稱：</label>
+                        <input class="form-control" id="nickname" name="nickname" type="text">
+                    </div>
+                    <div class="mt-3">
+                        <label for="age">年齡：</label>
+                        <input class="form-control" id="age" name="age" type="number" min="1" value="12">
+                    </div>
+                    <div class="btn_box text-center mt-3">
+                        <button class="btn btn-primary" id="btn-01">確認</button>
+                        <button class="btn btn-danger" id="btn-02">取消</button>
+                        <button class="btn btn-secondary" id="btn-03">暫存</button>
+                        <button class="btn btn-success" id="btn-04">復原</button>
+                    </div>
+                    <div class="Temporary_box mt-2">
+                        <div class="fs-1 text-center">暫存區</div>
+                        <label for="Temporary01">帳號</label>
+                        <input class="form-control" id="Temporary01" name="Temporary01" type="text" disabled
+                            placeholder="帳號尚無暫存">
+                        <label for="Temporary02">暱稱</label>
+                        <input class="form-control" id="Temporary02" name="Temporary02" type="text" disabled
+                            placeholder="暱稱尚無暫存">
+                        <label for="Temporary02">年齡</label>
+                        <input class="form-control" id="Temporary03" name="Temporary03" type="text" disabled
+                            placeholder="暱稱尚無暫存">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box1 mt-3">
+            <div class="fs-2">文字輸入(排版練習)</div>
+            <div class="row mt-1 align-items-center">
+                <div class="col-auto">
+                    <label class="form-label" for="username">帳號：</label>
+                </div>
+                <div class="col-auto">
+                    <input class="form-control" type="text" name="username" id="username">
+                </div>
+                <div class="col-auto">
+                    <div class="form-text text-danger">※此為必填欄位</div>
+                </div>
+            </div>
+            <div class="row mt-1 align-items-center">
+                <div class="col-auto">
+                    <label class="form-label" for="nickname2">暱稱：</label>
+                </div>
+                <div class="col-auto">
+                    <input class="form-control" type="text" name="nickname2" id="nickname2">
+                </div>
+                <div class="col-auto">
+                    <div class="form-text text-success">※此為選填欄位</div>
+                </div>
+            </div>
+            <div class="row mt-1 align-items-center">
+                <div class="col-auto">
+                    <label class="form-label" for="age2">年齡：</label>
+                </div>
+                <div class="col-auto">
+                    <input class="form-control" type="number" name="age2" id="age2" min="1" value="12">
+                </div>
+                <div class="col-auto">
+                    <div class="form-text text-danger">※此為必填欄位</div>
+                </div>
+            </div>
+            <div class="btn_box text-center mt-3">
+                <button class="btn btn-primary" id="btn-021">確認</button>
+                <button class="btn btn-danger" id="btn-022">取消</button>
+                <button class="btn btn-secondary" id="btn-023">暫存</button>
+                <button class="btn btn-success" id="btn-024">復原</button>
+            </div>
+            <div class="fs-2">暫存區</div>
+            <div class="row mt-1 align-items-center">
+                <div class="col-auto">
+                    <label class="form-label" for="Temporary021">帳號：</label>
+                </div>
+                <div class="col-auto">
+                    <input id="Temporary021" name="Temporary021" type="text" disabled placeholder="帳號尚無暫存"
+                        class="form-control">
+                </div>
+                <div class="col-auto">
+                    <div class="form-text text-secondary">顯示暫存內容</div>
+                </div>
+            </div>
+            <div class="row mt-1 align-items-center">
+                <div class="col-auto">
+                    <label class="form-label" for="Temporary022">暱稱：</label>
+                </div>
+                <div class="col-auto">
+                    <input id="Temporary022" name="Temporary022" type="text" disabled placeholder="暱稱尚無暫存"
+                        class="form-control">
+                </div>
+                <div class="col-auto">
+                    <div class="form-text text-secondary">顯示暫存內容</div>
+                </div>
+            </div>
+            <div class="row mt-1 align-items-center">
+                <div class="col-auto">
+                    <label class="form-label" for="Temporary023">年齡：</label>
+                </div>
+                <div class="col-auto">
+                    <input id="Temporary023" name="Temporary023" type="text" disabled placeholder="年齡尚無暫存"
+                        class="form-control">
+                </div>
+                <div class="col-auto">
+                    <div class="form-text text-secondary">顯示暫存內容</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        // 主程式
+        $(function () {
+            var n = 0;
+            console.log("Hello World!");
+            $("#btn-01").click(function () {
+                n++;
+                console.log("文字輸入" + n + " 帳號： " + $("#accont").val() + " 暱稱： " + $("#nickname").val() + " 年齡： " + $("#age").val());
+            });
+            $("#btn-02").click(function () {
+                $("#accont").val(null);
+                $("#nickname").val(null);
+                $("#age").val(12);
+            });
+            $("#btn-03").click(function () {
+                if ($("#accont").val() != "") {
+                    $("#Temporary01").val($("#accont").val());
+                }
+                if ($("#nickname").val() != "") {
+                    $("#Temporary02").val($("#nickname").val());
+                }
+                if ($("#age").val() != "") {
+                    $("#Temporary03").val($("#age").val());
+                }
+            });
+            $("#btn-04").click(function () {
+                if ($("#Temporary01").val() != "") {
+                    $("#accont").val($("#Temporary01").val());
+                }
+                if ($("#Temporary02").val() != "") {
+                    $("#nickname").val($("#Temporary02").val());
+                }
+                if ($("#Temporary03").val() != "") {
+                    $("#age").val($("#Temporary03").val());
+                }
+            });
+            //第二部分
+            var x = 0;
+            $("#btn-021").click(function () {
+                if ($("#username").val() == "") {
+                    alert("不是跟你說帳號必填嗎?");
+                } else {
+                    x++;
+                    console.log("文字輸入(排版練習)" + x + " 帳號： " + $("#username").val() + " 暱稱： " + $("#nickname2").val() + " 年齡： " + $("#age2").val());
+                }
+            });
+            $("#btn-022").click(function () {
+                $("#username").val(null);
+                $("#nickname2").val(null);
+                $("#age2").val(12);
+            });
+            $("#btn-023").click(function () {
+                if ($("#username").val() == "" && $("#nickname2").val() == "") {
+                    alert("都沒寫東西是暫存什麼啦!?");
+                } else {
+                    if ($("#username").val() != "") {
+                        $("#Temporary021").val($("#username").val());
+                    }
+                    if ($("#nickname2").val() != "") {
+                        $("#Temporary022").val($("#nickname2").val());
+                    }
+                    $("#Temporary023").val($("#age2").val());
+                }
+            });
+            $("#btn-024").click(function () {
+                if ($("#Temporary021").val() == "" && $("#Temporary022").val() == "") {
+                    alert("就沒有暫存還想復原個屁......");
+                } else {
+                    if ($("#Temporary021").val() != "") {
+                        $("#username").val($("#Temporary021").val());
+                    }
+                    if ($("#Temporary022").val() != "") {
+                        $("#nickname2").val($("#Temporary022").val());
+                    }
+                    $("#age2").val($("#Temporary023").val());
+                }
+            });
+        });
+
+
+        var today = new Date();
+
+        // console.log(today.toUTCString());
+        // console.log(today.toTimeString());
+        // console.log(today.toLocaleDateString());
+        // console.log(today.toLocaleTimeString());
+
+        var time_date = document.querySelector(".time_date");
+        // console.log(time_date.textContent);
+        time_date.textContent = today.toLocaleDateString();
+
+        var time_sec = document.querySelector(".time_sec");
+        time_sec.textContent = today.toLocaleTimeString();
+
+        var time_flash = setInterval(new_time, 1000);
+        function new_time() {
+            var new_time_sec = new Date();
+            var time_sec_new = document.querySelector(".time_sec");
+            var time_sec_new_hover = document.querySelector(".time_sec:hover");
+            time_sec_new.textContent = new_time_sec.toLocaleTimeString();
+            var random_num = Math.floor(Math.random() * 8) + 1;
+            // console.log(random_num);
+            time_sec_new.style.color = "var(--ColorType0" + random_num + "02)";
+            time_sec_new.style.border = "var(--ColorType0" + random_num + "03) 3px solid";
+
+            // console.log(time_sec_new_hover);
+            if (time_sec_new_hover === null) {
+                // console.log("無觸發");
+                time_sec_new.style.backgroundColor = "";
+            } else {
+                time_sec_new_hover.style.backgroundColor = "var(--ColorType0" + random_num + "04)";
+            }
+        }
+    </script>
+</body>
+
+</html>

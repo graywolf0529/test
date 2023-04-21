@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        body {
+            background-color: var(--ColorType1002);
+        }
+
+        .bgi_b {
+            height: 250px;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .box {
+            font-family: 'Stick', sans-serif;
+            background-color: var(--ColorType0103);
+            color: var(--ColorType0101);
+            border: 10px double var(--ColorType0102);
+            border-radius: 20px;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline:before {
+            position: absolute;
+            content: "";
+            background-color: var(--ColorType1104);
+            width: 3px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline_pointer {
+            position: relative;
+        }
+
+        .timeline_pointer:before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            top: 0px;
+            /* left: 50%;
+            transform: translateX(-50%); */
+            background-color: var(--ColorType0103);
+            border-radius: 50%;
+            border: 3px solid var(--ColorType0702);
+            z-index: 2;
+        }
+
+        .timeline_pointer:hover:before {
+            width: 24px;
+            height: 24px;
+            top: -2px;
+            border: 10px double var(--ColorType0703);
+        }
+
+        .timeline_pointer:nth-child(1):hover:before {
+            content: "2013";
+        }
+
+        .timeline_pointer:nth-child(2):hover:before {
+            content: "2014";
+        }
+
+        .timeline_pointer:nth-child(3):hover:before {
+            content: "2015";
+        }
+
+        .timeline_pointer:nth-child(4):hover:before {
+            content: "2020";
+        }
+
+        @media screen and (max-width:768px) {
+            .timeline:before {
+                left: -20px;
+            }
+
+            .timeline_pointer:before {
+                background-color: var(--ColorType1002);
+                top: -10px;
+                left: -28px;
+            }
+
+            .timeline_pointer:hover:before {
+                top: -12px;
+                left: -30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="timeline">
+            <div class="timeline_pointer row box p-2 justify-content-center align-content-center mb-1 mt-3">
+                <div class="col-md-6">
+                    <div class="bgi_b" style="background-image: url(https://fakeimg.pl/300x200/200);"></div>
+                </div>
+                <div class="col-md-6 text_box">
+                    <div class="fs-4">
+                        王品牛排 - 服務生
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>服務時間：8個月</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="timeline_pointer row box p-2 justify-content-center align-content-center mb-1 flex-row-reverse">
+                <div class="col-md-6">
+                    <div class="bgi_b" style="background-image: url(https://fakeimg.pl/300x200/200);"></div>
+                </div>
+                <div class="col-md-6 text_box">
+                    <div class="fs-4">
+                        資策會 - 網路工程師課程
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>學習時間：6個月</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="timeline_pointer row box p-2 justify-content-center align-content-center mb-1 mt-2">
+                <div class="col-md-6">
+                    <div class="bgi_b" style="background-image: url(https://fakeimg.pl/300x200/200);"></div>
+                </div>
+                <div class="col-md-6 text_box">
+                    <div class="fs-4">
+                        中佑資訊 - 工程師
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>服務時間：5年3個月</li>
+                            <li>網路架構調整</li>
+                            <li>CCNA</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="timeline_pointer row box p-2 justify-content-center align-content-center mb-1 flex-row-reverse">
+                <div class="col-md-6">
+                    <div class="bgi_b" style="background-image: url(https://fakeimg.pl/300x200/200);"></div>
+                </div>
+                <div class="col-md-6 text_box">
+                    <div class="fs-4">
+                        騰曜網路 - 工程師
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>服務時間：2年4個月</li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="timeline_pointer row box p-2 justify-content-center align-content-center mb-1 mt-2">
+                <div class="col-md-6">
+                    <div class="bgi_b" style="background-image: url(https://fakeimg.pl/300x200/200);"></div>
+                </div>
+                <div class="col-md-6 text_box">
+                    <div class="fs-4">
+
+                    </div>
+                    <nav>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="timeline_pointer row box p-2 justify-content-center align-content-center mb-3 flex-row-reverse">
+                <div class="col-md-6">
+                    <div class="bgi_b" style="background-image: url(https://fakeimg.pl/300x200/200);"></div>
+                </div>
+                <div class="col-md-6 text_box">
+                    <div class="fs-4">
+
+                    </div>
+                    <nav>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

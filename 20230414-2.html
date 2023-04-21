@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="demo">
+                    <div class="mb-3">
+                        <label for="username">帳號</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="帳號字數5~10字"
+                            required>
+                        <div class="valid-feedback">帳號格式正確</div>
+                        <div class="invalid-feedback">帳號格式錯誤</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pw">密碼</label>
+                        <input type="password" id="pw" name="pw" class="form-control" placeholder="密碼字數3~10字" required>
+                        <div class="valid-feedback">密碼格式正確</div>
+                        <div class="invalid-feedback">密碼格式錯誤</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="re_pw">確認密碼</label>
+                        <input type="password" id="re_pw" name="re_pw" class="form-control" placeholder="再次輸入密碼"
+                            required>
+                        <div class="valid-feedback">密碼一致</div>
+                        <div class="invalid-feedback">密碼不一致</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email字數5~10字"
+                            required>
+                        <div class="valid-feedback">格式正確</div>
+                        <div class="invalid-feedback">格式錯誤</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthday">生日</label>
+                        <input type="date" id="birthday" name="birthday" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" id="age_txt">年齡：18歲</label>
+                        <input type="range" id="age" name="age" class="form-range" value="18" min="0" max="99">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edu" class="form-check-label">最高學歷</label>
+                        <select name="edu" id="edu" class="form-control">
+                            <option value="未選取">請選擇學歷</option>
+                            <option value="研究所">研究所</option>
+                            <option value="大學(專)">大學(專)</option>
+                            <option value="高中">高中</option>
+                            <option value="國中">國中</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-check-label">興趣(複選)</label>
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-inline" id="run" name="interest" value="跑步">
+                            <label for="run" class="form-check-label">跑步</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-inline" id="swim" name="interest" value="游泳">
+                            <label for="swim" class="form-check-label">游泳</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-inline" id="read" name="interest" value="閱讀">
+                            <label for="read" class="form-check-label">閱讀</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-inline" id="movie" name="interest" value="電影">
+                            <label for="movie" class="form-check-label">電影</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-inline" id="game" name="interest" value="遊戲">
+                            <label for="game" class="form-check-label">遊戲</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-check-label">血型(單選)</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="blood_type" id="AB型" value="AB型">
+                            <label class="form-check-label" for="AB型">AB型</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="blood_type" id="A型" value="A型">
+                            <label class="form-check-label" for="A型">A型</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="blood_type" id="B型" value="B型">
+                            <label class="form-check-label" for="B型">B型</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="blood_type" id="O型" value="O型">
+                            <label class="form-check-label" for="O型">O型</label>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-danger" id="cancel">取消</button>
+                        <button class="btn btn-success" id="confirm">確認</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 offset-2">
+                <div class="demo" id="showmsg"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        var username_check = false;
+        var pw_check = false;
+        var re_pw_check = false;
+        var email_check = false;
+        var age_check = true;
+
+
+        $(function () {
+            var dtToday = new Date();
+
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
+
+            var maxDate = year + '-' + month + '-' + day;
+
+            // or instead:
+            // var maxDate = dtToday.toISOString().substr(0, 10);
+
+            // alert(maxDate);
+            $('#birthday').attr('max', maxDate);
+        });
+
+        $("#username").bind("input propertychange", function () {
+            if ($(this).val().length > 4 && $(this).val().length < 11) {
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                username_check = true;
+            } else {
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                username_check = false;
+            }
+        });
+
+        $("#pw").bind("input propertychange", function () {
+            if ($(this).val().length > 2 && $(this).val().length < 11) {
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                pw_check = true;
+            } else {
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                pw_check = false;
+            }
+        });
+
+        $("#re_pw").bind("input propertychange", function () {
+            if ($(this).val() == $("#pw").val()) {
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                re_pw_check = true;
+            } else {
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                re_pw_check = false;
+            }
+        });
+
+        $("#email").bind("input propertychange", function () {
+            console.log("Email：" + $(this).val().length);
+            if ($(this).val().length > 4 && $(this).val().length < 11) {
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                email_check = true;
+            } else {
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                email_check = false;
+            }
+        });
+
+        var age = -1;
+        $("#birthday").change(function () {
+            var birthday_data = $(this).val().split('-');
+            console.log(birthday_data[0]);
+            var now = new Date();
+            console.log(now.getFullYear());
+            var year_gap = now.getFullYear() - birthday_data[0];
+            var month_gap = birthday_data[1] - now.getMonth() - 1;
+
+            if (year_gap == 0) {
+                age = 0;
+            } else if (month_gap > 0) {
+                age = year_gap - 1;
+                console.log(age);
+            } else if (month_gap == 0) {
+                var date_gap = birthday_data[2] - now.getDate();
+                console.log(date_gap);
+                if (date_gap < 0) {
+                    age = year_gap - 1;
+                } else {
+                    age = year_gap;
+                }
+            } else {
+                age = year_gap;
+            }
+            console.log(age);
+            $("#age_txt").html("年齡：" + age + "歲");
+            $("#age").val(age);
+            if (age > 17) {
+                age_check = true;
+            } else {
+                age_check = false;
+            }
+        });
+
+        $("#age").change(function () {
+            $("#age_txt").html("年齡：" + $(this).val() + "歲");
+            if ($(this).val() > 17) {
+                if(age>=0){
+                    if($(this).val()==age){
+                        age_check = true;
+                    }else{
+                        age_check = false;
+                    }
+                }else{
+                    age_check = true;
+                }
+            } else {
+                age_check = false;
+            }
+        });
+
+
+        $("#cancel").click(function () {
+            $("#username").val("");
+            $("#pw").val("");
+            $("#re_pw").val("");
+            $("#email").val("");
+            $("#birthday").val("");
+            $("#age").val(18);
+            $("#age_txt").html("年齡：18歲");
+            $("#edu")[0].selectedIndex = 0;
+        });
+        $("#confirm").click(function () {
+            if (username_check && pw_check && re_pw_check && email_check && age_check) {
+                var interest = [];
+                $.each($("input[name=interest]:checked"), function () {
+                    interest.push($(this).val());
+                });
+                var bloodtype = $("input[name=blood_type]:checked").val();
+                $("#showmsg").html("<h3>帳號：" + $("#username").val() + "</h3><h3>密碼：" + $("#pw").val() + "</h3><h3>Email：" + $("#email").val() + "</h3><h3>生日：" + $("#birthday").val() + "</h3><h3>年齡：" + $("#age").val() + "</h3><h3>最高學歷：" + $("#edu").val() + "</h3><h3>興趣：" + interest.join("/") + "</h3><h3>血型：" + bloodtype + "</h3>");
+            } else if (age!=$("#age").val()){
+                alert("請確認生日與年齡是否符合");
+            } else if (age_check == false) {
+                alert("未成年請勿填寫！");
+            } else {
+                alert("輸入資料格式有誤，請重新確認！");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
