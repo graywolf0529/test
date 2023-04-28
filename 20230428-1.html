@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootStrap 元件練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+
+        .bgi_normal {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            color: white;
+        }
+        .bgi_small {
+            background-position: center;
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="fs-1">Accordion</div>
+        <div class="accordion" id="accordion_array">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#PrettyDerby01" aria-expanded="true" aria-controls="collapseOne">
+                        PrettyDerby <i class="bi bi-1-circle-fill"></i> 北部玄駒
+                    </button>
+                </h2>
+                <div id="PrettyDerby01" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordion_array">
+                    <div class="accordion-body bgi_normal" style="background-image:url(./images/PrettyDerby-北部玄駒.png)">
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#PrettyDerby02" aria-expanded="false" aria-controls="collapseTwo">
+                        PrettyDerby <i class="bi bi-2-circle-fill"></i> 八重無敵
+                    </button>
+                </h2>
+                <div id="PrettyDerby02" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordion_array">
+                    <div class="accordion-body">
+                        <div class="accordion-body bgi_normal"
+                            style="background-image:url(./images/PrettyDerby-八重無敵.png)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#PrettyDerby03" aria-expanded="false" aria-controls="collapseThree">
+                        PrettyDerby <i class="bi bi-3-circle-fill"></i> 優秀素質
+                    </button>
+                </h2>
+                <div id="PrettyDerby03" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordion_array">
+                    <div class="accordion-body">
+                        <div class="accordion-body bgi_normal"
+                            style="background-image:url(./images/PrettyDerby-優秀素質.png)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">2.alert <i class="bi bi-volume-up text-danger"></i></div>
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary mb-2" id="liveAlertBtn">Show live alert</button>
+        <div class="alert alert-primary" role="alert">
+            A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
+            like.
+        </div>
+        <div class="alert alert-success" role="alert">
+            A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert alert-warning" role="alert">
+            A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert alert-info" role="alert">
+            A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert alert-light" role="alert">
+            A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div class="alert alert-dark" role="alert">
+            A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">3.Badges</div>
+        <span class="badge text-bg-warning">Warning</span>
+        <span class="badge text-bg-info">Info</span>
+        <button class="btn btn-dark">購物車<span class="badge text-bg-danger">5</span></button>
+        <button type="button" class="btn btn-primary position-relative">
+            Inbox
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                99+
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        </button>
+        <button type="button" class="btn btn-primary position-relative">
+            Profile
+            <span
+                class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">New alerts</span>
+            </span>
+        </button>
+    </div>
+    <div class="demo">
+        <div class="fs-1">4.Breadcrumb</div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="demo">
+        <div class="fs-1">5.button</div>
+        <button class="btn btn-primary">primary</button>
+        <button class="btn btn-warning">warning</button>
+        <button class="btn btn-success">success</button>
+        <hr>
+        <a href="#" class="btn btn-primary">primary</a>
+        <button class="btn btn-primary">input primary</button>
+        <button class="btn btn-primary" type="submit">submit primary</button>
+        <button class="btn btn-primary" type="reset">reset primary</button>
+        <hr>
+        <button class="btn btn-outline-primary">primary</button>
+        <button class="btn btn-outline-warning">warning</button>
+        <button class="btn btn-outline-success">success</button>
+
+        <div class="fs-4">註解: </div>
+        <button class="btn btn-primary btn-lg">btn-lg</button>
+        <button class="btn btn-primary">primary</button>
+        <button class="btn btn-primary btn-sm">btn-sm</button>
+        <button class="btn btn-danger" disabled="">售完</button>
+        <hr>
+        <div class="d-grid gap-2">
+            <button class="btn btn-outline-danger">danger</button>
+            <button class="btn btn-outline-info">info</button>
+        </div>
+        <hr>
+        <div class="fs-4">註解: responsive</div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-outline-danger">danger</button>
+            <button class="btn btn-outline-info">info</button>
+        </div>
+        <hr>
+        <div class="fs-4">註解: mx-auto</div>
+        <div class="d-grid gap-2 col-5 mx-auto">
+            <button class="btn btn-outline-danger">danger</button>
+            <button class="btn btn-outline-info">info</button>
+        </div>
+        <hr>
+        <div class="fs-4">註解: d-flex justify-content-md-end</div>
+        <div class="d-grid gap-2 d-flex justify-content-md-end">
+            <button class="btn btn-outline-danger">danger</button>
+            <button class="btn btn-outline-info">info</button>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-1">6.Card</div>
+        <div class="card col-6">
+            <img src="./images/FM007.webp" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">グリリン[強欲な二つの魂]</h5>
+                <p class="card-text">SSR - 心 - 暗影</p>
+                <div class="d-grid d-flex justify-content-center"><a href="#" class="btn btn-info">更多資訊</a></div>
+            </div>
+        </div>
+        <div class="card col-6 mt-2">
+            <img src="./images/FM006.webp" class="card-img-top" alt="">
+            <div class="card-header">card-header</div>
+            <div class="card-body">
+                <h5 class="card-title">ウィンリィ[白砂の乙女]</h5>
+                <p class="card-text">SSR - 人理 - 自由</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="d-grid d-flex justify-content-center"><a href="#" class="btn btn-info">更多資訊</a></div>
+            </div>
+            <div class="card-footer">card-footer</div>
+        </div>
+        <div class="card text-center mt-2 col-8">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="true" id="nav01">鋼之鍊金術師</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav02">賽馬娘</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"  id="nav03">狼</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body" id="nav_data">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="demo">
+        <div class="row">
+            <div class="col-7">
+                <div class="row p-0 m-0">
+                    <div class="col-12 p-0 m-0"><img src="./images/FM001.webp" width="100%" alt=""></div>
+                    <div class="col-6 p-0 m-0"><img src="./images/FM002.webp" width="100%" alt=""></div>
+                    <div class="col-6 p-0 m-0"><img src="./images/FM003.webp" width="100%" alt=""></div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="demo_text d-block">
+                    <ul>
+                        <li><a href="#">Joker</a></li>
+                        <p class="text-truncate">SSR - 心 - 自由 按鈕厲害奧客，多多也不電子郵件一邊浪漫很多標誌好好，陷入授。</p>
+                        <li><a href="#">大總統</a></li><p class="text-truncate">SSR - 心 - 秩序</p>
+                        <li><a href="#">愛德華</a></li><p class="text-truncate">SSR - 心 - 異人</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+        const alert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('liveAlertBtn')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                alert('danger, you triggered this alert message! <a href="#" class="alert-link">an example link</a>', 'danger')
+            })
+        }
+
+        $(function(){
+            $("#nav01").hover(function(){
+                $("#nav01").addClass("active")
+                $("#nav02").removeClass("active")
+                $("#nav03").removeClass("active")
+                var Str_html = '<div class="row"><div class="col-7"><div class="row p-0 m-0"><div class="col-12 p-0 m-0"><img src="./images/FM001.webp" width="100%" alt=""></div><div class="col-6 p-0 m-0"><img src="./images/FM002.webp" width="100%" alt=""></div><div class="col-6 p-0 m-0"><img src="./images/FM003.webp" width="100%" alt=""></div></div></div><div class="col-5"><div class="demo_text d-block"><ul><li><a href="#">Joker</a></li><p class="text-truncate">SSR - 心 - 自由 按鈕厲害奧客，多多也不電子郵件一邊浪漫很多標誌好好，陷入授。</p><li><a href="#">大總統</a></li><p class="text-truncate">SSR - 心 - 秩序</p><li><a href="#">愛德華</a></li><p class="text-truncate">SSR - 心 - 異人</p></ul></div></div></div>'
+                $("#nav_data").html(Str_html)
+            })
+            $("#nav02").hover(function(){
+                $("#nav02").addClass("active")
+                $("#nav01").removeClass("active")
+                $("#nav03").removeClass("active")
+                var Str_html = '<div class="row"><div class="col-7"><div class="row p-0 m-0"><div class="col-12 p-0 m-0"><img src="./images/PrettyDerby-北部玄駒.png" width="100%" alt=""></div><div class="col-6 p-0 m-0"><img src="./images/PrettyDerby-八重無敵.png" width="100%" alt=""></div><div class="col-6 p-0 m-0"><img src="./images/PrettyDerby-優秀素質.png" width="100%" alt=""></div></div></div><div class="col-5"><div class="demo_text d-block"><ul><li><a href="#">北部玄駒</a></li><p class="text-truncate">SSR - 速度 按鈕厲害奧客，多多也不電子郵件一邊浪漫很多標誌好好，陷入授。</p><li><a href="#">八重無敵</a></li><p class="text-truncate">SSR - 力量</p><li><a href="#">優秀素質</a></li><p class="text-truncate">SSR - 智慧</p></ul></div></div></div>'
+                $("#nav_data").html(Str_html)
+            })
+            $("#nav03").hover(function(){
+                $("#nav03").addClass("active")
+                $("#nav02").removeClass("active")
+                $("#nav01").removeClass("active")
+                var Str_html = '<div class="row"><div class="col-7"><div class="row p-0 m-0"><div class="col-12 p-0 m-0"><img src="./images/wolf101.avif" width="100%" alt=""></div><div class="col-6 p-0 m-0"><img src="./images/wolf102.avif" width="100%" alt=""></div><div class="col-6 p-0 m-0"><img src="./images/wolf103.avif" width="100%" alt=""></div></div></div><div class="col-5"><div class="demo_text d-block"><ul><li><a href="#">Joker</a></li><p class="text-truncate">SSR - 心 - 自由 按鈕厲害奧客，多多也不電子郵件一邊浪漫很多標誌好好，陷入授。</p><li><a href="#">大總統</a></li><p class="text-truncate">SSR - 心 - 秩序</p><li><a href="#">愛德華</a></li><p class="text-truncate">SSR - 心 - 異人</p></ul></div></div></div>'
+                $("#nav_data").html(Str_html)
+            })
+        })
+    </script>
+</body>
+
+</html>
