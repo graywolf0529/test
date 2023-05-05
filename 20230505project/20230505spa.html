@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa式網站</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .bgi_setting {
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 75vh;
+        }
+        .bgi_small {
+            background-position: center;
+            background-size: cover;
+            width: 200px;
+            height: 200px;
+        }
+
+        .carousel_text {
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        @media screen and (max-width: 768px) {
+            .section5_img {
+                z-index: -1;
+                right: 0;
+            }
+
+            .section5_text {
+                background-color: rgb(0, 0, 0, .5);
+                color: aliceblue;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bg-secondary">
+        <div class="container text-end">
+            <a href="https://zh-tw.facebook.com/" target="_blank"><i
+                    class="fa-brands fa-square-facebook text-white"></i></a>
+            <a href="https://twitter.com/?lang=zh-Hant" target="_blank"><i
+                    class="fa-brands fa-square-twitter text-white"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i
+                    class="fa-brands fa-square-youtube text-white"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i
+                    class="fa-brands fa-square-instagram text-white"></i></a>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa-solid fa-gamepad text-danger fa-2x"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="true" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse show" id="navbarSupportedContent" style="">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    相關介紹
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">賽馬娘</a></li>
+                                    <li><a class="dropdown-item" href="#">支援卡</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">鋼之鍊金術師 - 漫畫</a></li>
+                                    <li><a class="dropdown-item" href="#">鋼之鍊金術師 - 手遊</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">電腦遊戲</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="d-flex" role="search">
+                            <button class="btn btn-outline-success me-1" data-bs-toggle="modal"
+                                data-bs-target="#LoginModal">登入</button>
+                            <button class="btn btn-outline-info" data-bs-toggle="modal"
+                                data-bs-target="#RegisterModal">註冊</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-success">
+                                            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">會員登入</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">帳號</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">密碼</label>
+                                                <input type="password" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer d-flex">
+                                            <a href="#" class="me-auto" data-bs-toggle="modal"
+                                                data-bs-target="#RegisterModal">還沒有帳號, 註冊新帳號!</a>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary">確認</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-danger">
+                                            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">會員註冊</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h2>會員條館</h2>
+                                                    <p>理念這段小遊戲穿著客戶所在，中文見面尊重標題，動畫負責分為，下了越來越不需要回憶傳說氣氛思路外資點。</p>
+                                                    <p>理念這段小遊戲穿著客戶所在，中文見面尊重標題，動畫負責分為，下了越來越不需要回憶傳說氣氛思路外資點。</p>
+                                                    <p>理念這段小遊戲穿著客戶所在，中文見面尊重標題，動畫負責分為，下了越來越不需要回憶傳說氣氛思路外資點。</p>
+                                                    <p>理念這段小遊戲穿著客戶所在，中文見面尊重標題，動畫負責分為，下了越來越不需要回憶傳說氣氛思路外資點。</p>
+                                                    <p>理念這段小遊戲穿著客戶所在，中文見面尊重標題，動畫負責分為，下了越來越不需要回憶傳說氣氛思路外資點。</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label for="" class="form-label">帳號</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="" class="form-label">密碼</label>
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="" class="form-label">確認密碼</label>
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="" class="form-label">Email</label>
+                                                        <input type="email" class="form-control">
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            確認會員守則
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer d-flex">
+                                            <a href="#" class="me-auto" data-bs-toggle="modal"
+                                                data-bs-target="#LoginModal">已經有帳號, 直接登入!</a>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary">確認</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item bgi_setting active"
+                        style="background-image: url('./images/PrettyDerby-丸善斯基.png');">
+                        <div class="carousel-caption d-none d-md-block carousel_text">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item bgi_setting" style="background-image: url('./images/FM003.webp');">
+                        <div class="carousel-caption d-none d-md-block carousel_text">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item bgi_setting" style="background-image: url('./images/Sekiro02.jpg');">
+                        <div class="carousel-caption d-none d-md-block carousel_text">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-info py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="./images/PrettyDerby-北部玄駒.png" style="height: 300px;" alt="">
+                    <h2 class="fw-900">賽馬娘</h2>
+                    <p>詳細內容加工專利第一個經銷商默認，她們肌膚小子承認結構一邊練習社會，沒有雲林出現在好了感動一套文學專用案件一切都，來看以前隊員當年法律責任</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="./images/FM008.webp" style="height: 300px;width: 100%;" alt="">
+                    <h2 class="fw-900">鋼之鍊金術師</h2>
+                    <p>詳細內容加工專利第一個經銷商默認，她們肌膚小子承認結構一邊練習社會，沒有雲林出現在好了感動一套文學專用案件一切都，來看以前隊員當年法律責任</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="./images/game01.jpg" style="height: 300px;width: 100%;" alt="">
+                    <h2 class="fw-900">電腦遊戲</h2>
+                    <p>詳細內容加工專利第一個經銷商默認，她們肌膚小子承認結構一邊練習社會，沒有雲林出現在好了感動一套文學專用案件一切都，來看以前隊員當年法律責任</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="position: relative;" class="py-3">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 bg-cover section5_img" style="position: absolute; 
+            background-image: url(images/game03.avif); 
+            top: 0;
+            bottom: 0;
+            background-repeat: no-repeat;"></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end section5_text">
+                <div class="col-md-7 col-sm-12">
+                    <h2 class="fw-900">賽馬娘Rank表</h2>
+                    <p>男女我家並不合同交換操作選單遠遠中間推坑王大全反應，協會你知道引導老大快車你會人大手上合同版面隱藏版人群技巧。
+                    </p>
+                    <button class="btn btn-outline-success">查看更多</button>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <h5 class="fw-700">鋼之鍊金術師介紹</h5>
+                            <p>發行如果初步覺得妻子防止特色網絡完美老人，準確購物訪問任意傳播美國是怎麼試驗你怎麼適應也能。
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-700">電玩遊戲心得分享</h5>
+                            <p>發行如果初步覺得妻子防止特色網絡完美老人。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section6" class="py-3">
+        <div class="container">
+            <h2 class="text-center fw-900">關於本站</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div>
+                           <img src="images/0302.jpg" style="width: 150px;height: 150px;" alt="">
+                        </div>
+                        <div>
+                            <h3 class="fw-700 text-center">自我介紹</h3>
+                            <p>大聲努力強大不用本類，唯一國內外似乎富岡接觸屬性防治十二老公必須，學院高度推坑王而在讓我高中楠雅不是很要在不得畫面地方主義，熟悉兩個健康高級，如何宣傳不滿聊天，將軍實在學會房屋似乎組圖擁有就有，下載。</p>                            
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div>
+                            <img src="images/PrettyDerby-玉座に集いし者たち.png" style="width: 150px;height: 150px;" alt=""> 
+                        </div>
+                        <div>
+                            <h3 class="fw-700 text-center">賽馬娘</h3>
+                            <p>大聲努力強大不用本類，唯一國內外似乎富岡接觸屬性防治十二老公必須，學院高度推坑王而在讓我高中楠雅不是很要在不得畫面地方主義，熟悉兩個健康高級，如何宣傳不滿聊天，將軍實在學會房屋似乎組圖擁有就有，下載。</p>                            
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div>
+                            <img src="images/FM002.webp" style="width: 150px;height: 150px;" alt="">
+                        </div>
+                        <div>
+                            <h3 class="fw-700 text-center">鋼之鍊金術師</h3>
+                            <p>大聲努力強大不用本類，唯一國內外似乎富岡接觸屬性防治十二老公必須，學院高度推坑王而在讓我高中楠雅不是很要在不得畫面地方主義，熟悉兩個健康高級，如何宣傳不滿聊天，將軍實在學會房屋似乎組圖擁有就有，下載。</p>                            
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div>
+                            <img src="images/game05.jpg" style="width: 150px;height: 150px;" alt=""> 
+                        </div>
+                        <div>
+                            <h3 class="fw-700 text-center">電玩心得</h3>
+                            <p>大聲努力強大不用本類，唯一國內外似乎富岡接觸屬性防治十二老公必須，學院高度推坑王而在讓我高中楠雅不是很要在不得畫面地方主義，熟悉兩個健康高級，如何宣傳不滿聊天，將軍實在學會房屋似乎組圖擁有就有，下載。</p>                            
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+</body>
+
+</html>
