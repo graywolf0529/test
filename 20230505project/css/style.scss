@@ -1,0 +1,77 @@
+
+.bgi_cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bgi_setting {
+    background-position: center top;
+    height: 75vh;
+}
+
+.bgi_small {
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+.box{
+    background-color: var(--ColorType0803);
+    color: var(--ColorType0801);
+    border: 10px double var(--ColorType0802);
+    border-radius: 20px;
+}
+.box_bgi{
+    height: 250px;
+    background-size:cover;
+    background-position: center center;
+}
+
+
+.carousel_text {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#section6{
+    background-color: lightgoldenrodyellow;
+}
+
+.section7_img {
+    height: 50vh;
+    width: 60%;
+}
+
+#section8{
+    background-color: lightcoral;
+}
+
+.section9_text {
+    background-color: rgb(0, 0, 0, .5);
+    color: aliceblue;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .section5_img {
+        z-index: -1;
+        right: 0;
+    }
+
+    .section5_text {
+        background-color: rgb(0, 0, 0, .5);
+        color: aliceblue;
+        padding: 15px;
+    }
+
+    .section7_img {
+        z-index: -1;
+        right: 0;
+        height: 85vh;
+        width: 100%;
+    }
+
+    #prettyderby2{
+        display: none;
+    }
+}
