@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .card_hover:hover{
+            box-shadow: 2px 2px 2px 2px #eee;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="respond">
+            <div class="col-md-6 fs-5 text-center bg-warning" id="json_id">
+
+            </div>
+            <div class="col-md-6 fs-2 text-center bg-secondary text-light" id="json_name">
+
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx",
+            dataType: "json",
+            success: showdata,
+            error: function () {
+                console.log("erroe-https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
+            }
+        })
+        function showdata(data) {
+            // console.log(data);
+            console.log(data[0]);
+            // $("#json_id").html(data[0].ID);
+            // $("#json_name").html(data[0].Name);
+            var html = "";
+            var n = 0;
+            $.each(data, function () {
+                console.log(this.ID);
+                n++;
+                // html += "<div class='col-md-3 fs-5 text-center bg-warning'>第" + n + "筆</div><div class='col-md-3 fs-5 text-center bg-info'>ID:" + this.ID + "</div><div class='col-md-6 fs-2 text-center bg-secondary text-light'>" + this.Name + "</div>";
+
+                var hostwords = this.HostWords.substring(0,60);
+                html += '<div class="col-md-6 mt-1"><div class="card h-100 card_hover" style="width: 18rem;"><img src="' + this.PicURL + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title bg-info">' + this.Name + '</h5><p class="card-text bg-secondary text-light">電話:' + this.Tel + '</p><p class="card-text bg-warning">地址:' + this.Address + '</p><p>簡介:' + hostwords + '</p><a href="#" class="btn btn-primary">Go somewhere</a></div></div></div>';
+
+                // '<div class="card" style="width: 18rem;"><img src="' + this.PicURL + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + this.Name + '</h5><p class="card-text">電話:' + this.Tel + '</p><p class="card-text">地址:' + this.Address + '</p><a href="#" class="btn btn-primary">Go somewhere</a></div></div>'
+            });
+            $("#respond").html(html);
+
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].Name);
+            }
+        }
+    </script>
+</body>
+
+</html>

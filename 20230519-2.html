@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .row_hover:hover{
+            background-color: lightgoldenrodyellow;
+            box-shadow: 4px 4px 4px 4px #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="fs-1">臺北市</div>
+        <div class="row" id="respond_Taipei"></div>
+        <div class="fs-1">臺中市</div>
+        <div class="row" id="respond_Taichung"></div>
+        <div class="fs-1">高雄市</div>
+        <div class="row" id="respond_Kaohsiung"></div>
+        <div class="row" id="respond">
+            <div class="col-md-8 offset-2">
+                <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-8 offset-2">
+                <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav1" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav1">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    <img src="https://fakeimg.pl/300x200/200" width="200px" height="200px">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Disabled</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://localhost:8088/git_project/test/json/hotel_C_f.json",
+            success: showData,
+            error: function () {
+                console.log("error");
+            }
+        })
+
+        function showData(data) {
+            console.log(data.XML_Head.Infos.Info[0]);
+            $("#respond").empty();
+            var n = 0;
+            $.each(data.XML_Head.Infos.Info, function () {
+                console.log(this.Region);
+                n++;
+                var str_html = '<div class="col-md-10 offset-1"><nav class="navbar navbar-expand-lg bg-light"><div class="container-fluid row_hover"><p class="navbar-brand">'+n+'.'+this.Name;
+                if(this.TotalNumberofRooms==null){
+                    str_html += '<span class="badge bg-dark rounded-pill">房間數:未知';
+                }else if(this.TotalNumberofRooms>20){
+                    str_html += '<span class="badge bg-success rounded-pill">房間數:'+this.TotalNumberofRooms;
+                }else if(this.TotalNumberofRooms>10){
+                    str_html += '<span class="badge bg-warning rounded-pill">房間數:'+this.TotalNumberofRooms;
+                }else{
+                    str_html += '<span class="badge bg-danger rounded-pill">房間數:'+this.TotalNumberofRooms;
+                }
+                str_html += '</span></p><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#'+this.Id+'" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="'+this.Id+'"><ul class="navbar-nav"><li class="nav-item"><img ';
+                if(this.Picture1==null || this.Picture1==""){
+                    str_html += 'src="https://fakeimg.pl/200x200/200"';
+                }else{
+                    // console.log(this.Picture1);
+                    str_html += 'src="'+this.Picture1+'"';
+                }
+                str_html += ' width="200px" height="200px"></li><li class="nav-item"><p>地址：'+this.Add+'</p></li><li class="nav-item"><p>電話:'+this.Tel+'</p></li><li class="nav-item"><p>地址：'+this.Add+'</p></li><li class="nav-item"><p>'+this.Parkinginfo+'</p></li></ul></div></div></nav></div>';
+
+                if(this.Region=="臺北市"){
+                    $("#respond_Taipei").append(str_html);
+                }else if(this.Region=="臺中市"){
+                    $("#respond_Taichung").append(str_html);
+                }else if(this.Region=="高雄市"){
+                    $("#respond_Kaohsiung").append(str_html);
+                }
+                // $("#respond").append(str_html);
+                // if(n==150){
+                //     return false;
+                // }
+            });
+        }
+    </script>
+</body>
+
+</html>
