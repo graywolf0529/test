@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 mt-2 offset-md-2">
+                <button id="List" value="List" class="btn btn-success">列出所有</button>
+            </div>
+            <div class="col-md-4 mt-2">
+                <div class="d-inline"><label for="Search_keyword" class="form-label">搜尋：</label><input type="text"
+                        class="form-control" placeholder="搜尋關鍵字" id="Search_keyword"></div>
+            </div>
+            <div class="col-md-2 mt-2">
+                <button id="Search" value="Search" class="btn btn-info">搜尋</button>
+            </div>
+            <div class="col-md-8 offset-md-2 mt-2">
+                <table class="table table-bordered text-center" id="data_table">
+                    <thead>
+                        <tr>
+                            <th>編碼</th>
+                            <th>產品名稱</th>
+                            <th>價格</th>
+                            <th>庫存</th>
+                            <th>備註</th>
+                            <th>建檔時間</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="col-md-2 offset-md-2 mt-2" id="Other">
+                <button id="Api" value="Api" class="btn btn-warning">串接</button>
+            </div>
+            <div class="col-md-6 mt-2">
+                <input type="text" class="form-control" placeholder="串接來源" id="Api_url" value="http://192.168.60.40/web202302/20230526_R.php">
+            </div>
+            <div class="col-md-8 offset-md-2 mt-2" id="Other">
+                <ol class="list-group list-group-numbered" id="ListGroup">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Content for list item
+                        </div>
+                        <span class="badge bg-primary rounded-pill">14</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        // $.ajax({
+        //     type: "POST",
+        //     url: "http://192.168.60.5:8088/git_project/test/20230526-1.php",
+        //     dataType: "json",
+        //     success: showData,
+        //     error: function () {
+        //         console.log("error");
+        //     }
+        // })
+
+        function showData(data) {
+            console.log(data);
+            $.each(data, function () {
+                if (this.type == "error") {
+                    var html_str = "<tr><td colspan='6'>查無資料</td></tr>"
+                } else {
+                    var html_str = "<tr><td>" + this.sn + "</td><td>" + this.p_name + "</td><td>" + this.p_price + "</td><td>" + this.p_number + "</td><td>" + this.p_note + "</td><td>" + this.Create_time + "</td></tr>";
+                }
+                $("#data_table tbody").append(html_str);
+            });
+        }
+
+        $("#List").click(function () {
+            $("#data_table tbody").empty();
+            let formData = new FormData();
+            formData.append('type', 'List')
+            $.ajax({
+                type: "POST",
+                url: "http://192.168.60.5:8088/git_project/test/20230526-1.php",
+                dataType: "json",
+                // 告訴jQuery不要去處理髮送的資料
+                processData: false,
+                // 告訴jQuery不要去設定Content-Type請求頭
+                contentType: false,
+                data: formData,
+                success: showData,
+                error: function () {
+                    console.log("error")
+                }
+            })
+        });
+        $("#Search").click(function () {
+            // console.log($("#Search_keyword").val());
+            if ($("#Search_keyword").val() == "") {
+                alert("請輸入關鍵字再搜尋!");
+            } else {
+                $("#data_table tbody").empty();
+                var formData = new FormData();
+                formData.append('type', 'Search');
+                formData.append('Search_keyword', $("#Search_keyword").val());
+                $.ajax({
+                    type: "POST",
+                    url: "http://192.168.60.5:8088/git_project/test/20230526-1.php",
+                    dataType: "json",
+                    // 告訴jQuery不要去處理髮送的資料
+                    processData: false,
+                    // 告訴jQuery不要去設定Content-Type請求頭
+                    contentType: false,
+                    data: formData,
+                    success: showData,
+                    error: function () {
+                        console.log("error");
+                    }
+                })
+            }
+        });
+
+        function showApi(data) {
+            console.log(data);
+            $("#ListGroup").empty();
+            var n = 0;
+            $.each(data, function () {
+                n++;
+                if (this.type == "error") {
+                    var html_str = "<tr><td colspan='6'>查無資料</td></tr>"
+                } else {
+                    var html_str = '<li class="list-group-item d-flex justify-content-between align-items-start"><div class="ms-2 me-auto"><div class="fw-bold">第' + n + '筆</div><hr>';
+                    $.each(this, function (key, value) {
+                            // console.log('索引值為:'+key+'，值為:'+value);
+                            html_str += key+'：'+value+'<hr>';
+                    });
+                    html_str += '</div><span class="badge bg-primary rounded-pill">'+n+'</span></li>';
+                }
+                $("#ListGroup").append(html_str);
+            });
+        }
+
+        $("#Api").click(function () {
+            // console.log($("#Search_keyword").val());
+            var Api_url = $("#Api_url").val();
+            $.ajax({
+                type: "POST",
+                url: Api_url,
+                dataType: "json",
+                // 告訴jQuery不要去處理髮送的資料
+                processData: false,
+                // 告訴jQuery不要去設定Content-Type請求頭
+                contentType: false,
+                success: showApi,
+                error: function () {
+                    console.log("error");
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
