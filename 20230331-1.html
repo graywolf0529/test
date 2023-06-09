@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第11章</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="demo">
+                    <div class="fs-2">No1.文字輸入</div>
+                    <div class="mb-3">
+                        <label for="username">帳號</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nickname">暱稱</label>
+                        <input type="text" class="form-control" id="nickname" name="nickname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="menu">菜單</label>
+                        <input type="text" class="form-control" list="menu_data" id="menu" name="menu">
+                        <datalist id="menu_data">
+                            <option value="牛肉麵">
+                            <option value="麥當勞">
+                            <option value="肯德基">
+                            <option value="鍋貼">
+                        </datalist>
+                    </div>
+                    <div class="mb-3">
+                        <label for="drink">飲料</label>
+                        <select name="drink" id="drink" class="form-select" multiple size="2">
+                            <option value="可樂" selected>可樂</option>
+                            <option value="紅茶">紅茶</option>
+                            <option value="蘋果汁">蘋果汁</option>
+                        </select>
+                    </div>
+                    <div class="fs-3">選項</div>
+                    <div class="form-check">
+                        <input type="checkbox" name="options" id="加大" class="form-check-input" value="加大">
+                        <label for="加大" class="form-check-label">加大</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="options" id="加醬" class="form-check-input" value="加醬">
+                        <label for="加醬" class="form-check-label">加醬</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="options" id="加辣" class="form-check-input" value="加辣">
+                        <label for="加辣" class="form-check-label">加辣</label>
+                    </div>
+                    <div class="fs-3">付款方式</div>
+                    <div class="form-check">
+                        <input type="radio" name="pay" id="現金" class="form-check-input" value="現金" checked>
+                        <label for="現金" class="form-check-label">現金</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="pay" id="信用卡" class="form-check-input" value="信用卡">
+                        <label for="信用卡" class="form-check-label">信用卡</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="pay" id="街口支付" class="form-check-input" value="街口支付">
+                        <label for="街口支付" class="form-check-label">街口支付</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="pay" id="LinePay" class="form-check-input" value="LinePay">
+                        <label for="LinePay" class="form-check-label">LinePay</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="num">數量</label>
+                        <input type="number" class="form-control" id="num" name="num" min="0" max="100" value="5">
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-danger" id="cancel_btn">取消</button>
+                        <button class="btn btn-success" id="ok_btn">確認</button>
+                    </div>
+                    <div id="showmsg"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="demo">
+                    <div class="fs-2">No2.文字輸入(排版練習) align-items-center</div>
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <label for="username02">帳號</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" name="username02" id="username02"
+                                list="user_data02">
+                            <datalist id="user_data02">
+                                <option value="albert">
+                                <option value="jacky">
+                                <option value="allen">
+                                <option value="vick">
+                            </datalist>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-text">
+                                不會記錄任何資訊
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <label for="nickname02">暱稱</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" name="nickname02" id="nickname02"
+                                list="nick_data02">
+                            <datalist id="nick_data02">
+                                <option value="艾伯特">
+                                <option value="傑基">
+                                <option value="艾倫">
+                                <option value="維克">
+                            </datalist>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-text">
+                                不會記錄任何資訊
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <label for="menu02">菜單</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" name="menu02" id="menu02" list="menu_data02">
+                            <datalist id="menu_data02">
+                                <option value="玉子燒">
+                                <option value="豆皮壽司">
+                                <option value="鮭魚壽司">
+                                <option value="鮪魚壽司">
+                            </datalist>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-text">
+                                不會記錄任何資訊
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <label for="drink02">飲料</label>
+                        </div>
+                        <div class="col-auto">
+                            <select name="drink02" id="drink02" class="form-select" multiple size="4">
+                                <option value="可樂" selected>可樂</option>
+                                <option value="抹茶">抹茶</option>
+                                <option value="紅茶">紅茶</option>
+                                <option value="綠茶">綠茶</option>
+                                <option value="蘋果汁">蘋果汁</option>
+                                <option value="柳橙汁">柳橙汁</option>
+                                <option value="葡萄汁">葡萄汁</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-text">
+                                不會記錄任何資訊
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-3">選項</div>
+                    <div class="form-check">
+                        <input type="checkbox" name="options02" id="加芥末" class="form-check-input" value="加芥末">
+                        <label for="加芥末" class="form-check-label">加芥末</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="options02" id="加薑" class="form-check-input" value="加薑">
+                        <label for="加薑" class="form-check-label">加薑</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="options02" id="加蘿蔔絲" class="form-check-input" value="加蘿蔔絲">
+                        <label for="加蘿蔔絲" class="form-check-label">加蘿蔔絲</label>
+                    </div>
+                    <div class="fs-3">付款方式</div>
+                    <div class="form-check">
+                        <input type="radio" name="pay02" id="現金02" class="form-check-input" value="現金" checked>
+                        <label for="現金02" class="form-check-label">現金</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="pay02" id="信用卡02" class="form-check-input" value="信用卡">
+                        <label for="信用卡02" class="form-check-label">信用卡</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="pay02" id="街口支付02" class="form-check-input" value="街口支付">
+                        <label for="街口支付02" class="form-check-label">街口支付</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="pay02" id="LinePay02" class="form-check-input" value="LinePay">
+                        <label for="LinePay02" class="form-check-label">LinePay</label>
+                    </div>
+                    <div class="row align-items-center mb-2">
+                        <div class="col-auto">
+                            <label for="num02">數量</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" name="num02" id="num02" min="0" max="100"
+                                value="2">
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-text">
+                                不會記錄任何資訊
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end mb-2">
+                        <button class="btn btn-danger" id="cancel_btn02">取消</button>
+                        <button class="btn btn-info" id="pause02">暫存</button>
+                        <button class="btn btn-dark" id="dpause02">清暫存</button>
+                        <button class="btn btn-secondary" id="re02" disabled>復原</button>
+                        <button class="btn btn-success" id="ok_btn02">確認</button>
+                    </div>
+                    <div id="showmsg02">
+                    </div>
+                    <div id="p02"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            var ok_count = 0;
+            $("#ok_btn").click(function () {
+                ok_count++;
+                var options = [];
+                $.each($("input[name='options']:checked"), function () {
+                    // console.log($(this).val());
+                    options.push($(this).val());
+                });
+                var pay = $("input[name='pay']:checked").val();
+                console.log("NO.1 - " + ok_count + " 帳號：" + $("#username").val() + " 暱稱：" + $("#nickname").val() + " 菜單：" + $("#menu").val() + " 數量：" + $("#num").val());
+                $("#showmsg").html($("#showmsg").html() + "<br>NO.1 - " + ok_count + " 帳號：" + $("#username").val() + " 暱稱：" + $("#nickname").val() + " 菜單：" + $("#menu").val() + " 飲料：" + $("#drink").val() + " 數量：" + $("#num").val() + " 選項：" + options.join("/") + " 付款方式：" + pay);
+            });
+            $("#cancel_btn").click(function () {
+                ok_count = 0;
+                $("#username").val("");
+                $("#nickname").val("");
+                $("#menu").val("");
+                $("#drink").val("可樂");
+                $("#加大").prop("checked", false);
+                $("#加醬").prop("checked", false);
+                $("#加辣").prop("checked", false);
+                $("input[name='pay'][value='現金']").prop("checked", true);
+                $("#num").val(5)
+                $("#showmsg").html("");
+            });
+
+
+            var ok_count_02 = 0;
+            $("#ok_btn02").click(function () {
+                ok_count_02++;
+                var options02 = [];
+                $.each($("input[name='options02']:checked"), function () {
+                    // console.log($(this).val());
+                    options02.push($(this).val());
+                });
+                var pay02 = $("input[name='pay02']:checked").val();
+                console.log("NO.2 - " + ok_count_02 + " 帳號：" + $("#username02").val() + " 暱稱：" + $("#nickname02").val() + " 菜單：" + $("#menu02").val() + " 數量：" + $("#num02").val());
+                $("#showmsg02").html($("#showmsg02").html() + "<br>NO.2 - " + ok_count_02 + " 帳號：" + $("#username02").val() + " 暱稱：" + $("#nickname02").val() + " 菜單：" + $("#menu02").val() + " 飲料：" + $("#drink02").val() + " 數量：" + $("#num02").val() + " 選項：" + options02.join("/") + " 付款方式：" + pay02);
+            });
+            $("#cancel_btn02").click(function () {
+                ok_count_02 = 0;
+                $("#username02").val("");
+                $("#nickname02").val("");
+                $("#menu02").val("");
+                $("#drink02").val("可樂").select;
+                $("#加芥末").prop("checked", false);
+                $("#加薑").prop("checked", false);
+                $("#加蘿蔔絲").prop("checked", false);
+                // $("#現金02").attr("checked",false);
+                $("input[name='pay02'][value='現金']").prop("checked", true);
+                $("#num02").val(2)
+                $("#showmsg02").html("");
+            });
+            $("#pause02").click(function () {
+                var options02 = [];
+                $.each($("input[name='options02']:checked"), function () {
+                    // console.log($(this).val());
+                    options02.push($(this).val());
+                });
+                $("#p02").html("<input type='text' hidden='true' id='username02_p' name='username02_p' value='" + $("#username02").val() + "'><input type='text' hidden='true' id='nickname02_p' name='nickname02_p' value='" + $("#nickname02").val() + "'><input type='text' hidden='true' id='menu02_p' name='menu02_p' value='" + $("#menu02").val() + "'><input type='text' hidden='true' id='drink02_p' name='drink02_p' value='" + $("#drink02").val() + "'><input type='text' hidden='true' id='options02_p' name='options02_p' value='" + options02.join("/") + "'><input type='text' hidden='true' id='pay02_p' name='pay02_p' value='" + $("input[name='pay02']:checked").val() + "'><input type='text' hidden='true' id='num02_p' name='num02_p' value='" + $("#num02").val() + "'>");
+                $("#re02").attr("disabled", false);
+                $("#re02").attr("class", "btn btn-warning");
+            });
+            $("#dpause02").click(function () {
+                $("#p02").html(null);
+                $("#re02").attr("disabled", true);
+                $("#re02").attr("class", "btn btn-secondary");
+            });
+            $("#re02").click(function () {
+                $("#username02").val($("#username02_p").val());
+                $("#nickname02").val($("#nickname02_p").val());
+                $("#menu02").val($("#menu02_p").val());
+                var drink_arr = new Array();
+                drink_arr = $("#drink02_p").val().split(",");
+                // console.log(drink_arr);
+                drink_arr.forEach(function (val, index) {
+                    var drink02_p = "#drink02 option[value='" + val + "']";
+                    // console.log(drink02_p);
+                    $(drink02_p).prop("selected", true);
+                });
+                // $("#drink02").val($("#drink02_p").val());
+                var options_arr = new Array();
+                options_arr = $("#options02_p").val().split("/");
+                // console.log(drink_arr);
+                options_arr.forEach(function (val, index) {
+                    var options02_p = "input[name='options02'][value='" + val + "']";
+                    // console.log(options02_p);
+                    $(options02_p).prop("checked", true);
+                });
+                var pay02_p = "input[name='pay02'][value='" + $("#pay02_p").val() + "']";
+                $(pay02_p).prop("checked", true);
+                $("#num02").val($("#num02_p").val());
+            });
+        });
+    </script>
+</body>
+
+</html>

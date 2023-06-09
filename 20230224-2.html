@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table練習</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+<style>
+    body {
+        background-color: var(--ColorType0401);
+    }
+    @media screen and (max-width: 1024px) {
+        .table_rwd thead{
+            display: none;
+        }
+        .table_rwd tr{
+            display: block;
+        }
+        .table_rwd td{
+            display:block;
+            overflow: hidden;
+        }
+        .table_rwd tbody tr td span.table_col{
+            display: block;
+            float: left;
+            width: 60%;
+        }
+        .table_rwd td::before{
+            content: attr(data-th) " ： ";
+            font-size: 20px;
+            font-weight:bolder;
+            color: var(--ColorType0403);
+            display: block;
+            float: left;
+            width: 40%;
+        }
+    }
+</style>
+</head>
+
+<body>
+        <table class="table table-hover table-bordered table-striped border-dark table_rwd">
+            <thead class="table-dark">
+                <tr>
+                    <th>排名</th>
+                    <th>角色名稱</th>
+                    <th>性別</th>
+                    <th>作品名稱</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success">
+                    <td data-th="排名"><span class="table_col">1</span></td>
+                    <td data-th="角色名稱"><span class="table_col">愛德華．艾力克</span></td>
+                    <td data-th="性別"><span class="table_col">男</span></td>
+                    <td data-th="作品名稱"><span class="table_col">鋼之鍊金術士</span></td>
+                    <td data-th="備註"><span class="table_col">國家鍊金術士</span></td>
+                </tr>
+                <tr>
+                    <td data-th="排名">2</td>
+                    <td data-th="角色名稱">羅羅亞．索隆</td>
+                    <td data-th="性別">男</td>
+                    <td data-th="作品名稱">航海王</td>
+                    <td data-th="備註">三刀流</td>
+                </tr>
+                <tr>
+                    <td data-th="排名">3</td>
+                    <td data-th="角色名稱">日向雛田</td>
+                    <td data-th="性別" class="table-warning">女</td>
+                    <td data-th="作品名稱">火影忍者</td>
+                    <td data-th="備註" class="table-light">白眼</td>
+                </tr>
+                <tr>
+                    <td data-th="排名" class="bg-danger">4</td>
+                    <td data-th="角色名稱" class="bg-secondary">真城最高</td>
+                    <td data-th="性別" class="bg-info">男</td>
+                    <td data-th="作品名稱" class="bg-warning">爆漫王</td>
+                    <td data-th="備註" class="bg-light">漫畫家</td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+</head>
+
+<body>
+    <div class="demo">
+        <div class="fs-2 text-center">首頁</div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="username" class="form-check-label">帳號</label>
+            </div>
+            <div class="col-8">
+                <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="pw" class="form-check-label">密碼</label>
+            </div>
+            <div class="col-8">
+                <input type="password" class="form-control" id="pw" name="pw">
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="mail" class="form-check-label">Email</label>
+            </div>
+            <div class="col-8">
+                <input type="email" class="form-control" id="mail" name="mail">
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="birthday" class="form-check-label">生日</label>
+            </div>
+            <div class="col-8">
+                <input type="date" class="form-control" id="birthday" name="birthday">
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="age" class="form-check-label">年齡</label>
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" id="age" name="age" value="18">
+            </div>
+            <div class="col-8">
+                <div class="form-text">
+                    <input type="range" class="form-range" id="age_r" name="age_r" min="1" max="95" value="18">
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="study" class="form-check-label">最高學歷</label>
+            </div>
+            <div class="col-8">
+                <select name="study" id="study" class="form-control">
+                    <option value="">請選擇學歷</option>
+                    <option value="研究所">研究所</option>
+                    <option value="大學(專)">大學(專)</option>
+                    <option value="高中">高中</option>
+                    <option value="國中">國中</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="" class="form-check-label">興趣(複選)</label>
+            </div>
+            <div class="col-8">
+                <div class="form-check-inline">
+                    <input type="checkbox" class="form-check-inline" id="run" name="interest" value="跑步">
+                    <label for="run" class="form-check-label">跑步</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="checkbox" class="form-check-inline" id="climb" name="interest" value="爬山">
+                    <label for="climb" class="form-check-label">爬山</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="checkbox" class="form-check-inline" id="read" name="interest" value="閱讀">
+                    <label for="read" class="form-check-label">閱讀</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+                <label for="" class="form-check-label">血型(單選)</label>
+            </div>
+            <div class="col-8">
+                <input type="radio" name="blood_type" id="AB型" value="AB型">
+                <label for="AB型">AB型</label>
+                <input type="radio" name="blood_type" id="A型" value="A型">
+                <label for="A型">A型</label>
+                <input type="radio" name="blood_type" id="B型" value="B型">
+                <label for="B型">B型</label>
+                <input type="radio" name="blood_type" id="O型" value="O型">
+                <label for="O型">O型</label>
+            </div>
+            <div class="col-2">
+                <div class="form-text">
+                    必填
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-2">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+                <input type="button" value="確認" class="btn btn-success w-100" id="confirm">
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="respond" id="respond">
+
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $("#age_r").change(function () {
+            console.log("年齡：" + $(this).val() + "歲");
+            $("#age").val($(this).val());
+        });
+        $("#age").change(function () {
+            console.log("年齡：" + $(this).val() + "歲");
+            $("#age_r").val($(this).val());
+        });
+
+        $("#confirm").click(function () {
+            console.log($("#username").val());
+            var interest = [];
+            $.each($("input[name='interest']:checked"), function () {
+                // console.log($(this).val());
+                interest.push($(this).val());
+            });
+            var blood_type = $("input[name='blood_type']:checked").val();
+            $("#respond").html('<h2>帳號：' + $("#username").val() + '</h2><hr><h2>密碼：' + $("#pw").val() + '</h2><hr><h2>Email：' + $("#mail").val() + '</h2><hr><h2>生日：' + $("#birthday").val() + '</h2><hr><h2>年齡：' + $("#age").val() + '</h2><hr><h2>最高學歷：' + $("#study").val() + '</h2><hr><h2>興趣：' + interest.join("/") + '</h2><hr><h2>血型：' + blood_type + '</h2>');
+        });
+    </script>
+</body>
+
+</html>

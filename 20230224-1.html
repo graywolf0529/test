@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片練習</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        body {
+            background-color: var(--ColorType0401);
+        }
+
+        .demo {
+            width: 50%;
+            background-color: var(--ColorType0402);
+            border: 2px solid var(--ColorType0403);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px auto;
+        }
+
+        .img_box {
+            width: 600px;
+            height: 600px;
+            border: 2px solid var(--ColorType0403);
+            border-radius: 50%;
+            margin: 15px auto;
+            background-image: url(./images/Sekiro02.jpg);
+            background-position: center center;
+            background-size: cover;
+            box-shadow: 4px 4px 4px 4px var(--ColorType0404);
+        }
+        .img_box:hover{
+            width: 1024px;
+            height: 768px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo"><img src="./images/wolf001.avif" class="img-fluid" alt=""></div>
+    <div class="demo"><img src="./images/wolf002.avif" class="img-thumbnail" alt=""></div>
+    <img src="./images/wolf003.avif" width="500px" class="d-block mx-auto" alt="">
+    <div class="text-center"><img src="./images/wolf104.avif" width=400px alt=""></div>
+    <div class="img_box"></div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

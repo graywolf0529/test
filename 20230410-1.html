@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/color.css">
+    <style>
+        .myhouse{
+            width: 200px;
+            height: 200px;
+            border: 2px solid palegoldenrod;
+            background-color: black;
+        }
+        .rgb_box{
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="fs-2">switch</div>
+        <div class="form-check form-switch">
+            <input type="checkbox" class="form-check-input" role="switch" id="switch_l">
+            <label for="switch_l" class="form-check-label" id="switch_t">關燈</label>
+            <div class="myhouse"></div>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-2">Range</div>
+        <label for="age" class="form-check-label" id="age_t">年齡：??</label>
+        <input class="form-range" type="range" id="age" name="age" min="1" max="90">
+    </div>
+    <div class="demo">
+        <div class="fs-2">RGB</div>
+        <label for="red" class="form-check-label" id="red_t">Red：0</label>
+        <input class="form-range" type="range" id="red" name="red" min="0" max="255" value="0" onchange="set_color()">
+        <label for="green" class="form-check-label" id="green_t">Green：0</label>
+        <input class="form-range" type="range" id="green" name="green" min="0" max="255" value="0" onchange="set_color()">
+        <label for="blue" class="form-check-label" id="blue_t">Blue：0</label>
+        <input class="form-range" type="range" id="blue" name="blue" min="0" max="255" value="0" onchange="set_color()">
+        <label for="a" class="form-check-label" id="a_t">透明度：1</label>
+        <input class="form-range" type="range" id="a" name="a" min="0" max="1" step="0.1" value="1" onchange="set_color()">
+        <div class="rgb_box"></div>
+    </div>
+    <div class="demo">
+        <div class="fs-2">checkbox-inline</div>
+        <div class="form-check-inline">
+            <input type="checkbox" class="form-check-input" name="" id="">
+            <label for="">選項01</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="checkbox" class="form-check-input" name="" id="">
+            <label for="">選項02</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="checkbox" class="form-check-input" name="" id="">
+            <label for="">選項03</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="checkbox" class="form-check-input" name="" id="">
+            <label for="">選項04</label>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-2">radio</div>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="radio1" id="radio11">
+            <label for="" class="form-check-label">單選01</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="radio1" id="radio12">
+            <label for="" class="form-check-label">單選02</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="radio1" id="radio13">
+            <label for="" class="form-check-label">單選03</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="radio1" id="radio14">
+            <label for="" class="form-check-label">單選04</label>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $("#switch_l").change(function(){
+            // console.log($(this).is(':checked'));
+            if($(this).is(':checked')){
+                $("#switch_t").html("開燈");
+                $(".myhouse").css("background-color","white");
+            }else{
+                $("#switch_t").html("關燈");
+                $(".myhouse").css("background-color","black");
+            }
+        });
+
+        $("#age").change(function(){
+            console.log("年齡：" + $(this).val() + "歲");
+            $("#age_t").html("年齡：" + $(this).val() + "歲");
+        });
+
+        $("#red").change(function(){
+            console.log("Red：" + $(this).val());
+            $("#red_t").html("Red：" + $(this).val());
+            // $(".rgb_box").css("background-color","rgb(" + $("#red").val() + "," + $("#green").val() + "," + $("#blue").val() + ")");
+        });
+        $("#green").change(function(){
+            console.log("Green：" + $(this).val());
+            $("#green_t").html("Green：" + $(this).val());
+        });
+        $("#blue").change(function(){
+            console.log("Blue：" + $(this).val());
+            $("#blue_t").html("Blue：" + $(this).val());
+        });
+        $("#a").change(function(){
+            console.log("透明度：" + $(this).val());
+            $("#a_t").html("透明度：" + $(this).val());
+        });
+        function set_color(){
+            var red = $("#red").val();
+            var green = $("#green").val();
+            var blue = $("#blue").val();
+            var a = $("#a").val();
+            $(".rgb_box").css("background-color","rgba(" + red + "," + green + "," + blue + "," + a + ")");
+        }
+    </script>
+</body>
+</html>

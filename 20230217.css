@@ -1,0 +1,178 @@
+:root {
+    /* 甜膩瑪瑙 */
+    --ColorType0101: #FFD954;--ColorType0102: #E4B660;--ColorType0103: #F2AB39;--ColorType0104: #69491A;
+    /* 憂鬱植物藍 */
+    --ColorType0201: #D1DDDB;--ColorType0202: #85B8CB;--ColorType0203: #1D6A96;--ColorType0204: #283B42;
+    /* 瑰麗紅 */
+    --ColorType0301: #FFC2C3;--ColorType0302: #FE7773;--ColorType0303: #E81E25;--ColorType0304: #0E0301;
+    /* 冰凍石 */
+    --ColorType0401: #A6C2CE;--ColorType0402: #9C8F96;--ColorType0403: #EBC57C;--ColorType0404: #6B799E;
+    /* 北極光 */
+    --ColorType0501: #91D4C2;--ColorType0502: #45BB89;--ColorType0503: #3D82AB;--ColorType0504: #003853;
+    /* 迷幻霧景 */
+    --ColorType0601: #FDDCEF;--ColorType0602: #D5C5E9;--ColorType0603: #3A5A69;--ColorType0604: #030923;
+    /* 電光紫 */
+    --ColorType0701: #D3B7D8;--ColorType0702: #A13E97;--ColorType0703: #632A7E;--ColorType0704: #280E3B;
+    /* 軟木塞 */
+    --ColorType0801: #B98D72;--ColorType0802: #AE4951;--ColorType0803: #57233A;--ColorType0804: #161B1F;
+    /* 多角萬花筒 */
+    --ColorType0901: #E4DACE;--ColorType0902: #E5BB4B;--ColorType0903: #498EAF;--ColorType0904: #631F16;
+    /* 天然亞麻 */
+    --ColorType1001: #6C838B;--ColorType1002: #BB7748;--ColorType1003: #9E6D70;--ColorType1004: #7F726A;
+    /* 惹人注目的金剛鸚鵡 */
+    --ColorType1101: #FFDD00;--ColorType1102: #F15A22;--ColorType1103: #5FAD46;--ColorType1104: #478FCD;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--ColorType0903);
+}
+.wrapper{
+    width: 1024px;
+    margin: 0px auto;
+    padding-top: 20px ;
+}
+.logo img{
+    width: 100%;
+}
+.banner{
+    background-color: var(--ColorType0401);
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.banner nav ul{
+    list-style: none;
+    display: inline-block;
+}
+.banner nav ul li{
+    float: left;
+}
+.banner nav ul li a{
+    display: block;
+    margin: 10px 20px 10px 20px;
+    background-color: var(--ColorType0502);
+    padding: 3px 5px;
+    text-decoration: none;
+    color: var(--ColorType0504);
+    border-radius: 10px;
+}
+.banner nav ul li a:hover{
+    background-color: var(--ColorType0504);
+    color: var(--ColorType0502);
+}
+.sidebar{
+    float: left;
+    background-color: var(--ColorType0403);
+    width: 240px;
+    height: 768px;
+    border-radius: 15px;
+    margin: 10px;
+}
+.sidebar ul{
+    list-style: none;
+}
+.sidebar ul li a{
+    display: block;
+    border: 3px double var(--ColorType0703);
+    border-radius: 30px;
+    background-color: var(--ColorType0702);
+    color: var(--ColorType0701);
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    width: 200px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sidebar ul li a:hover{
+    background-color: var(--ColorType0701);
+    color: var(--ColorType0702);
+    border: 3px dashed var(--ColorType0204);
+}
+.content{
+    background-color: var(--ColorType0402);
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+.content h1{
+    color: var(--ColorType0303);
+    text-shadow: 2px 2px 1px var(--ColorType0302);
+    background: linear-gradient(to bottom,var(--ColorType0101),var(--ColorType0102),var(--ColorType0103),var(--ColorType0104));
+    border: var(--ColorType0104) 2px solid;
+    border-radius: 50%;
+    width: 200px;
+    margin: 0px auto;
+    font-style: oblique;
+}
+.content p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: "標楷體";
+}
+.content p::first-letter{
+    font-size: 40px;
+}
+.content a{
+    text-decoration: none;
+    display: block;
+    background-color: var(--ColorType0502);
+    color: var(--ColorType0504);
+    width: 120px;
+    height: 50px;
+    margin: 0px auto;
+    line-height: 50px;
+    border-radius: 30px;
+}
+.content a:hover{
+    background-color: var(--ColorType0504);
+    color: var(--ColorType0502);
+}
+footer{
+    background-color: var(--ColorType0403);
+    text-align: center;
+    color: var(--ColorType0104);
+    font-size: 16px;
+    font-family: "標楷體";
+    font-weight: bolder;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 6px double var(--ColorType0104);
+}
+@media screen and (max-width:1024px){
+    .wrapper{
+        width: 100%;
+    }
+    .content h1{
+        margin: 100px auto 0px;
+    }
+    .sidebar{
+        width: 98%;
+        height: auto;
+        text-align: center;
+    }
+    .sidebar ul{
+        display: inline-block;
+    }
+    .sidebar ul li{
+        float: left;
+    }
+    .sidebar ul li a{
+        font-size: 18px;
+        width: 100px;
+        height: 25px;
+        margin: 5px 10px;
+    }
+}
