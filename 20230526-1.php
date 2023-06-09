@@ -20,6 +20,7 @@
             if($_POST["type"]=="List"){
                 $sql = "SELECT * FROM test202305";
             }elseif($_POST["type"]=="Search"){
+<<<<<<< HEAD
                 $sql = "SELECT * FROM test202305 WHERE p_name LIKE '%".$_POST["Search_keyword"]."%' OR p_note LIKE '%".$_POST["Search_keyword"]."%'";
             }elseif($_POST["type"]=="New"){
                 $sql = "INSERT INTO test202305 (p_name,p_price,p_number,p_note,img_src) VALUES ('".$_POST["n_p_name"]."','".$_POST["n_p_price"]."','".$_POST["n_p_number"]."','".$_POST["n_p_note"]."','0302.jpg')";
@@ -35,6 +36,16 @@
                     // echo "<tr><td>".$row["sn"]."</td><td>".$row["p_name"]."</td><td>".$row["p_price"]."</td><td>".$row["p_number"]."</td><td>".$row["p_note"]."</td><td>".$row["Create_time"]."</td></tr>";
                     array_push($data_array,$row);
                 }
+=======
+                $sql = "SELECT * FROM test202305 WHERE p_name LIKE '%".$_POST["Search_keyword"]."%'";
+            }
+        }
+        $sql_result = $conn->query($sql);
+        if (mysqli_num_rows($sql_result) != 0) {
+            while ($row = $sql_result->fetch_assoc()) {
+                // echo "<tr><td>".$row["sn"]."</td><td>".$row["p_name"]."</td><td>".$row["p_price"]."</td><td>".$row["p_number"]."</td><td>".$row["p_note"]."</td><td>".$row["Create_time"]."</td></tr>";
+                array_push($data_array,$row);
+>>>>>>> 2bfca398923e3d6922cdb3afd83fce81fe8af3e6
             }
         }
     }else{
