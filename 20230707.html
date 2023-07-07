@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- 11200149295005 -->
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>口罩地圖實作教學</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .fw-700 {
+            font-weight: 700;
+        }
+
+        .fw-900 {
+            font-weight: 900;
+        }
+
+        #mylist {
+            height: 85vh;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <div class="col-md-3">
+                <select class="form-select form-select-lg my-3" id="selectCity">
+                    <option disabled selected>---------縣市---------</option>
+                    <option value="1">台北市</option>
+                    <option value="2">台中市</option>
+                    <option value="3">台南市</option>
+                </select>
+                <select class="form-select form-select-lg mb-3" id="selectRegion">
+                    <option disabled selected>---------鄉鎮區---------</option>
+                    <option value="1">西屯區</option>
+                    <option value="2">北屯區</option>
+                    <option value="3">南屯區</option>
+                </select>
+                <ul class="list-group" id="mylist">
+                    <li class="list-group-item">
+                        <h2 class="fw-900">XX藥局</h2>
+                        <h3 class="fw-700">地址:XXXXXXXX</h3>
+                        <h3 class="fw-700">電話:XXXXXXXX</h3>
+                        <h5 class="fw-900">成人口罩: <span class="h2 text-danger">99</span>個 | 兒童口罩: <span
+                                class="h2 text-warning">99</span>個</h5>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 p-0">
+                <div id="map" class="vh-100"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        var all_CityCountyData = []; //儲存縣市地區的資料
+        var selectedCity; //紀錄已選擇的縣市
+        var selectedArea; //紀錄已選擇的鄉鎮區
+        var selectedRegion; //紀錄已選擇縣市的所有鄉鎮區
+
+        var all_MaskData; //所有健保局的藥局資料
+        var map;
+
+
+        $(function () {
+            //產生地圖
+            map = L.map('map').setView([24.171479, 120.609716], 15);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var popHTML = '<div class="card"><div class="card-header text-bg-danger text-center h2 fw-900">XX藥局</div><div class="card-body"><h3 class="fw-700">地址:XXXXXXXX</h3><h3 class="fw-700">電話:XXXXXXXX</h3><h5 class="fw-900">成人口罩: <span class="h2 text-danger">99</span>個 | 兒童口罩:<span class="h2 text-warning">99</span>個</h5></div></div>';
+
+            L.marker([24.171479, 120.609716]).addTo(map)
+                .bindPopup(popHTML);
+
+
+            //載入縣市地區的資料
+            axios.get('js/CityCountyData.json')
+                .then(function (response) {
+                    // handle success
+                    console.log(response.data);
+                    all_CityCountyData = response.data;
+
+                    $("#selectCity").empty(); //清空
+                    $("#selectCity").append('<option disabled selected>---------縣市---------</option>');
+                    all_CityCountyData.forEach(function (item) {
+                        console.log(item.CityName);
+                        var strHTML = '<option value="' + item.CityName + '">' + item.CityName + '</option>';
+                        $("#selectCity").append(strHTML);
+                    });
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+
+            //載入健保局資料
+            axios.get('js/maskdata_points.json')
+                .then(function (response) {
+                    // handle success
+                    console.log(response.data.features);
+                    all_MaskData = response.data.features;
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+
+            //監聽selectCity 縣市選單
+            $("#selectCity").change(function () {
+                console.log($(this).val());
+                selectedCity = $(this).val();
+
+                all_CityCountyData.forEach(function (item) {
+                    if (item.CityName == selectedCity) {
+                        console.log(item.AreaList);
+                        selectedRegion = item.AreaList;
+
+                        //產生鄉鎮區select選單
+
+                        $("#selectRegion").empty(); //清空鄉鎮區select選單
+                        $("#selectRegion").append('<option disabled selected>---------鄉鎮區---------</option>');
+                        selectedRegion.forEach(function (item) {
+                            console.log(item.AreaName);
+                            var strHTML = '<option value="' + item.AreaName + '">' + item.AreaName + '</option>';
+                            $("#selectRegion").append(strHTML);
+                        });
+                    }
+                });
+            });
+
+
+            //監聽selectRegion 鄉鎮區選單
+            $("#selectRegion").change(function () {
+                var all_region_MaskData = []; //篩選過後某一鄉鎮區的藥局資料
+
+                console.log($(this).val());
+                selectedArea = $(this).val();
+
+                console.log('選擇了: ' + selectedCity + '和' + selectedArea);
+
+                //收集篩選過後某一鄉鎮區的藥局資料
+                all_MaskData.forEach(function (item) {
+                    if (item.properties.county == selectedCity && item.properties.town == selectedArea) {
+                        console.log(item.properties.name + ':' + item.properties.address);
+                        all_region_MaskData.push(item)
+                    }
+                });
+                console.log(all_region_MaskData);
+
+                $("#mylist").empty();
+
+                removeMarker(); //清空marker
+                all_region_MaskData.forEach(function (item) {
+                    var strHTML = '<li class="list-group-item"><h2 class="fw-900">' + item.properties.name + '</h2><h3 class="fw-700">地址:' + item.properties.address + '</h3><h3 class="fw-700">電話:' + item.properties.phone + '</h3><h5 class="fw-900">成人口罩: <span class="h2 text-danger">' + item.properties.mask_adult + '</span>個 | 兒童口罩: <span class="h2 text-warning">' + item.properties.mask_child + '</span>個</h5></li>';
+                    $("#mylist").append(strHTML);
+
+                    //產生marker 先取得經緯度
+                    console.log(item.geometry.coordinates[1]);
+                    console.log(item.geometry.coordinates[0]);
+
+                    var popHTML = '<div class="card"><div class="card-header text-bg-danger text-center h2 fw-900">' + item.properties.name + '</div><div class="card-body"><h3 class="fw-700">地址:' + item.properties.address + '</h3><h3 class="fw-700">電話:' + item.properties.phone + '</h3><h5 class="fw-900">成人口罩: <span class="h2 text-danger">' + item.properties.mask_adult + '</span>個 | 兒童口罩:<span class="h2 text-warning">' + item.properties.mask_child + '</span>個</h5></div></div>';
+
+                    L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map)
+                        .bindPopup(popHTML);
+                });
+
+
+            });
+        });
+
+        function removeMarker() {
+            map.eachLayer(function (layer) {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
